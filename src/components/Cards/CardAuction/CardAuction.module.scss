@@ -75,6 +75,20 @@
   }
 }
 
+.finish_in {
+  background-color: var(--main);
+  padding: 10px 0px;
+
+  img {
+    height: 17px;
+    margin: 0px 3px 0px 0px;
+  }
+
+  p {
+    color: #fff;
+  }
+}
+
 .content {
   padding: 10px 15px;
 
