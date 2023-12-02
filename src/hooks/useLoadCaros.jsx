@@ -21,7 +21,7 @@ function useLoadCaros(array, subArrayLength) {
   }, [array, pos, subArrayLength]);
 
   function Next() {
-    if (pos < array.length) {
+    if (pos < array.length - subArrayLength) {
       setPos(pos + 1);
     }
   }

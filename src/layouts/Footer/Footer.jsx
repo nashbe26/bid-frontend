@@ -56,9 +56,7 @@ function Footer() {
 const LingGroup = ({ links_group = LinkGroupExmp }) => {
   return (
     <div className={styles.links_group}>
-      <P14 weight={500} className={styles.title}>
-        {links_group.title}
-      </P14>
+      <P14 className={styles.title}>{links_group.title}</P14>
       {links_group.links.map((link, key) => {
         return (
           <P12 weight={300} key={key} className={styles.link}>

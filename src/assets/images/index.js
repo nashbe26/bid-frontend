@@ -1,4 +1,5 @@
-import home_header_img from "./temp/Home/img1.png";
-import home_header_filter from "./temp/Home/filtr.svg";
+import home_head from "./permats/home_head.png";
+import card_home from "./permats/card_home.jpg";
+import sold_out from "./permats/sold_out.png";
 
-export { home_header_img, home_header_filter };
+export { home_head, card_home, sold_out };

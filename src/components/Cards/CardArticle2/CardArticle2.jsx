@@ -17,10 +17,10 @@ function CardArticle2({ article, with_padding = false, className = "" }) {
       <img src={article.img} className={styles.main_img} alt="" />
       <div className={`${styles.infos} ${is_with_padding}`}>
         <Flex flex="between" className={styles.price_heart}>
-          <P14 weight={500}>{article.price} €</P14>
+          <P14>{article.price} €</P14>
           <Flex flex="start" className={styles.likes}>
             <img src={heart_empty} alt="" />
-            <P12 weight={500}>{article.likes}</P12>
+            <P12>{article.likes}</P12>
           </Flex>
         </Flex>
         <Flex flex="start" className={styles.price2_sheald}>

@@ -1,6 +1,23 @@
 import React from "react";
 import styles from "./txts.module.scss";
 
+export const H42 = ({
+  children,
+  className,
+  onClick = () => {},
+  weight = 400,
+}) => {
+  return (
+    <h2
+      className={`${styles.h42} ${className}`}
+      style={{ fontWeight: weight }}
+      onClick={onClick}
+    >
+      {children}
+    </h2>
+  );
+};
+
 export const H38 = ({
   children,
   className,
@@ -69,6 +86,40 @@ export const P21 = ({
   );
 };
 
+export const P20 = ({
+  children,
+  className,
+  onClick = () => {},
+  weight = 400,
+}) => {
+  return (
+    <p
+      className={`${styles.p20} ${className}`}
+      style={{ fontWeight: weight }}
+      onClick={onClick}
+    >
+      {children}
+    </p>
+  );
+};
+
+export const P19 = ({
+  children,
+  className,
+  onClick = () => {},
+  weight = 400,
+}) => {
+  return (
+    <p
+      className={`${styles.p19} ${className}`}
+      style={{ fontWeight: weight }}
+      onClick={onClick}
+    >
+      {children}
+    </p>
+  );
+};
+
 export const P18 = ({
   children,
   className,
@@ -78,6 +129,23 @@ export const P18 = ({
   return (
     <p
       className={`${styles.p18} ${className}`}
+      style={{ fontWeight: weight }}
+      onClick={onClick}
+    >
+      {children}
+    </p>
+  );
+};
+
+export const P17 = ({
+  children,
+  className,
+  onClick = () => {},
+  weight = 400,
+}) => {
+  return (
+    <p
+      className={`${styles.p17} ${className}`}
       style={{ fontWeight: weight }}
       onClick={onClick}
     >

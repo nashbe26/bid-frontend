@@ -5,6 +5,7 @@
   --main: #003566;
   --blue: #003566;
   --yellow: #ffc300;
+  --yellow2: #ffd60a;
   --green: #0da000;
   --red: #f70401;
   --red2: #d9100e;
@@ -52,49 +53,49 @@ div::selection,
 
 @font-face {
   font-family: "Poppin";
-  src: url("./assets/fonts/Poppins-Thin.ttf");
+  src: url("./assets/fonts/Poppins-ExtraLight.ttf");
   font-weight: 100;
 }
 
 @font-face {
   font-family: "Poppin";
-  src: url("./assets/fonts/Poppins-ExtraLight.ttf");
+  src: url("./assets/fonts/Poppins-Light.ttf");
   font-weight: 200;
 }
 
 @font-face {
   font-family: "Poppin";
-  src: url("./assets/fonts/Poppins-Light.ttf");
+  src: url("./assets/fonts/Poppins-Regular.ttf");
   font-weight: 300;
 }
 
 @font-face {
   font-family: "Poppin";
-  src: url("./assets/fonts/Poppins-Regular.ttf");
+  src: url("./assets/fonts/Poppins-Medium.ttf");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Poppin";
-  src: url("./assets/fonts/Poppins-Medium.ttf");
+  src: url("./assets/fonts/Poppins-SemiBold.ttf");
   font-weight: 500;
 }
 
 @font-face {
   font-family: "Poppin";
-  src: url("./assets/fonts/Poppins-SemiBold.ttf");
+  src: url("./assets/fonts/Poppins-Bold.ttf");
   font-weight: 600;
 }
 
 @font-face {
   font-family: "Poppin";
-  src: url("./assets/fonts/Poppins-Bold.ttf");
+  src: url("./assets/fonts/Poppins-ExtraBold.ttf");
   font-weight: 700;
 }
 
 @font-face {
   font-family: "Poppin";
-  src: url("./assets/fonts/Poppins-ExtraBold.ttf");
+  src: url("./assets/fonts/Poppins-Black.ttf");
   font-weight: 800;
 }
 

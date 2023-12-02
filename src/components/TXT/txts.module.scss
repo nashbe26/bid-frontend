@@ -1,22 +1,41 @@
 @use "../../assets/scss/media-queries.scss" as *;
 
-.h38 {
-  color: var(--main);
-  font-size: 38px;
+.h42,
+.h40,
+.h38,
+.h32,
+.h24,
+.p21,
+.p18,
+.p16,
+.p14,
+.p13,
+.p12,
+.p11,
+.p9 {
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
+  font-weight: 400;
+  color: var(--main);
+}
+
+.h42 {
+  font-size: 42px;
+
+  @include lt-md {
+    font-size: 38px;
+  }
+}
+
+.h38 {
+  font-size: 38px;
 
   @include lt-md {
     font-size: 34px;
   }
 }
 .h32 {
-  color: var(--main);
   font-size: 32px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 
   @include lt-md {
     font-size: 30px;
@@ -24,12 +43,7 @@
 }
 
 .h24 {
-  color: var(--main);
-
   font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 
   @include lt-md {
     font-size: 22px;
@@ -37,23 +51,39 @@
 }
 
 .p21 {
-  color: var(--main);
   font-size: 21px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 
   @include lt-md {
     font-size: 19px;
   }
 }
 
+.p20 {
+  font-size: 20px;
+
+  @include lt-md {
+    font-size: 18px;
+  }
+}
+
+.p19 {
+  font-size: 19px;
+
+  @include lt-md {
+    font-size: 17px;
+  }
+}
+
 .p18 {
-  color: var(--main);
   font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+
+  @include lt-md {
+    font-size: 16px;
+  }
+}
+
+.p18 {
+  font-size: 17px;
 
   @include lt-md {
     font-size: 16px;
@@ -61,11 +91,7 @@
 }
 
 .p16 {
-  color: var(--main);
   font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 
   @include lt-md {
     font-size: 15px;
@@ -73,11 +99,7 @@
 }
 
 .p14 {
-  color: var(--main);
   font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 
   @include lt-md {
     font-size: 13px;
@@ -85,11 +107,7 @@
 }
 
 .p13 {
-  color: var(--main);
   font-size: 13px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 
   @include lt-md {
     font-size: 12px;
@@ -97,11 +115,7 @@
 }
 
 .p12 {
-  color: var(--main);
   font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 
   @include lt-md {
     font-size: 11px;
@@ -109,11 +123,7 @@
 }
 
 .p11 {
-  color: var(--main);
   font-size: 11px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 
   @include lt-md {
     font-size: 10px;
@@ -121,11 +131,7 @@
 }
 
 .p9 {
-  color: var(--main);
   font-size: 9px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 
   @include lt-md {
     font-size: 8px;

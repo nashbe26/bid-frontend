@@ -74,7 +74,7 @@ const Link = ({ link = { name: "", link: "" } }) => {
   const current = UseIsContainUrl(link.link) ? styles.current : "";
 
   return (
-    <P16 weight={500} className={`${styles.link} ${current}`}>
+    <P16 className={`${styles.link} ${current}`}>
       <NavLink to={link.link}>{link.name}</NavLink>
     </P16>
   );
