@@ -27,7 +27,9 @@ function Navbar() {
 const Logo = () => {
   return (
     <div className={styles.logo}>
-      <img src={logo1} alt="" />
+      <NavLink to="/home">
+        <img src={logo1} alt="" />
+      </NavLink>
     </div>
   );
 };

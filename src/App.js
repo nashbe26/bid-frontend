@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.scss";
 
 import Navbar from "./layouts/Navbar/Navbar";
@@ -9,7 +9,8 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/live-auctions" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Navigate to="/home" />} />
       </Routes>
     </div>
   );
