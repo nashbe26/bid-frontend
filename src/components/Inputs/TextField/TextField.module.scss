@@ -1,0 +1,25 @@
+.main {
+  width: 100%;
+
+  label {
+    display: block;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  input {
+    display: block;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-bottom: solid 1px #e9f0f2;
+    width: 100%;
+    resize: none;
+
+    color: rgba(0, 0, 0);
+    font-weight: 300;
+  }
+}

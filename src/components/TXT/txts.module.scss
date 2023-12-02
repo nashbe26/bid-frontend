@@ -1,0 +1,133 @@
+@use "../../assets/scss/media-queries.scss" as *;
+
+.h38 {
+  color: var(--main);
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @include lt-md {
+    font-size: 34px;
+  }
+}
+.h32 {
+  color: var(--main);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @include lt-md {
+    font-size: 30px;
+  }
+}
+
+.h24 {
+  color: var(--main);
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @include lt-md {
+    font-size: 22px;
+  }
+}
+
+.p21 {
+  color: var(--main);
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @include lt-md {
+    font-size: 19px;
+  }
+}
+
+.p18 {
+  color: var(--main);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @include lt-md {
+    font-size: 16px;
+  }
+}
+
+.p16 {
+  color: var(--main);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @include lt-md {
+    font-size: 15px;
+  }
+}
+
+.p14 {
+  color: var(--main);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @include lt-md {
+    font-size: 13px;
+  }
+}
+
+.p13 {
+  color: var(--main);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @include lt-md {
+    font-size: 12px;
+  }
+}
+
+.p12 {
+  color: var(--main);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @include lt-md {
+    font-size: 11px;
+  }
+}
+
+.p11 {
+  color: var(--main);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @include lt-md {
+    font-size: 10px;
+  }
+}
+
+.p9 {
+  color: var(--main);
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @include lt-md {
+    font-size: 8px;
+  }
+}

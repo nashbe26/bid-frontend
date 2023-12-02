@@ -1,0 +1,35 @@
+@use "../../assets/scss/media-queries.scss" as *;
+
+.feedback {
+  border-top: 1px solid #e9f0f2;
+  border-bottom: 1px solid #e9f0f2;
+  padding: 3% 0px;
+  p {
+    margin: 0px 5% 0px 0px;
+
+    @include lt-md {
+      margin: 0px 3% 0px 0px;
+    }
+  }
+  button {
+    font-weight: 500;
+    margin: 0px 10px;
+    border: 1px solid rgba(78, 135, 155, 0.83);
+    padding: 8px 20px;
+    font-size: 12px;
+
+    @include lt-md {
+      padding: 6px 15px;
+      font-size: 11px;
+    }
+
+    .icon {
+      font-size: 16px;
+      margin: 0px 5px 0px 0px;
+
+      @include lt-md {
+        font-size: 14px;
+      }
+    }
+  }
+}

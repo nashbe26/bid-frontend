@@ -1,0 +1,50 @@
+@use "../../assets/scss/media-queries.scss" as *;
+
+.container_side_bar {
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+.side_bar {
+  width: 31%;
+
+  @include lt-md {
+    width: 0%;
+    display: none;
+  }
+
+  h2 {
+    margin: 0px 0px 13% 0px;
+  }
+
+  p {
+    margin: 0px 0px 13% 0px;
+    transition: all 0.1s;
+    &:hover {
+      // text-decoration: underline;
+    }
+  }
+
+  .active {
+    font-weight: 600 !important;
+    // text-decoration: underline;
+  }
+}
+
+.right_container {
+  width: 69%;
+
+  @include lt-md {
+    width: 100%;
+  }
+}
+
+.sublinks {
+  padding: 0px 0px 0px 15%;
+  transform: translateY(-8%);
+  width: fit-content;
+}
+
+.sublink {
+  margin: -3% 0px 8% 0px !important;
+}

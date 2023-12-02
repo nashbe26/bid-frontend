@@ -1,0 +1,38 @@
+.main {
+  width: 45px;
+  padding: 12px 6px;
+  background-color: white;
+  border: solid 1px #002e46;
+  border-radius: 500px;
+  cursor: pointer;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  span {
+    position: absolute;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    display: block;
+    border: solid 1px #002e46;
+
+    left: 13%;
+    right: auto;
+    transition: all 0.2s ease-in-out;
+    background-color: #002e46;
+  }
+}
+
+.checked {
+  justify-content: flex-end;
+  background-color: #002e46;
+
+  span {
+    left: 60%;
+    border: solid 1px white;
+    background-color: white;
+  }
+}
