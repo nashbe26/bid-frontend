@@ -60,7 +60,6 @@ function Footer() {
             {payements.map((payement, index) => {
               return (
                 <NavLink key={index} to={payement.link} target="_blank">
-                  {" "}
                   <img src={payement.icon} alt="" />
                 </NavLink>
               );
