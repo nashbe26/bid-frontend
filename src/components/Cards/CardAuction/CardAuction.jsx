@@ -6,6 +6,7 @@ import {
   blue_comp,
   blue_ppl,
   clock,
+  cup,
 } from "../../../assets/svgs";
 import { P14, P17, P18, P19 } from "../../TXT/TXT";
 import Flex from "../../Flex/Flex";
@@ -29,10 +30,15 @@ const empty_auction = {
   end_soon: false,
   finis_price: "",
   hearted: false,
+  win: false,
 };
 
 const CardAuction = ({ auction = empty_auction, className = "" }) => {
-  let styles_state = auction.live ? styles.live : styles.closed;
+  let styles_state = auction.live
+    ? styles.live
+    : auction.win
+    ? styles.win
+    : styles.closed;
 
   return (
     <div className={`${styles.auction} ${styles_state} ${className}`}>
@@ -45,7 +51,7 @@ const CardAuction = ({ auction = empty_auction, className = "" }) => {
 };
 
 const Header = ({ auction = empty_auction }) => {
-  let live = auction.live ? "Live" : "Closed";
+  let live = auction.live ? "Live" : auction.win ? "Winned" : "Closed";
   let heart = auction.hearted ? heart_fill : heart_empty;
 
   return (
@@ -58,6 +64,7 @@ const Header = ({ auction = empty_auction }) => {
 
 const Image = ({ auction = empty_auction }) => {
   let cercle_item = c_type[auction.with_icon] || null;
+  let over_img = auction.win ? cup : sold_out;
 
   return (
     <Flex flex="center" className={styles.auction_img}>
@@ -75,7 +82,7 @@ const Image = ({ auction = empty_auction }) => {
 
       {!auction.live && (
         <Flex flex="center" className={styles.overlay_closed}>
-          <img src={sold_out} alt="sold out" />
+          <img src={over_img} alt="sold out" />
         </Flex>
       )}
     </Flex>

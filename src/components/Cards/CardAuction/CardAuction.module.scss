@@ -129,3 +129,19 @@
     filter: blur(4px);
   }
 }
+
+.win {
+  .head {
+    p {
+      color: var(--yellow) !important;
+    }
+  }
+
+  .starting_price {
+    color: var(--red) !important;
+  }
+
+  .img {
+    filter: blur(4px);
+  }
+}

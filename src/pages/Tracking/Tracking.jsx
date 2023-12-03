@@ -11,7 +11,7 @@ import Flex from "../../components/Flex/Flex";
 function Tracking() {
   return (
     <MainContainer className={styles.main}>
-      {live_auctions.length === 4 ? (
+      {live_auctions.length === 0 ? (
         <YouHaveNoAuction />
       ) : (
         <AuctionSection title="Favourite" auctions={live_auctions} />

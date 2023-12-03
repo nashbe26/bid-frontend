@@ -1,0 +1,39 @@
+.main {
+  padding: 3% 0px 0px 0px;
+}
+
+.no_auction {
+  flex-direction: column;
+  margin: 3vw 0px 7vw 0px;
+
+  background: #fff;
+  padding: 2vw 0px 2vw 0px;
+  box-shadow: 0px 0px 11px 0px rgba(0, 53, 102, 0.2);
+  border-radius: 11px;
+  height: 40vh;
+
+  .txts {
+    flex-direction: column;
+  }
+
+  .main_title {
+    img {
+      height: 50px;
+    }
+  }
+
+  img {
+    height: 90px;
+  }
+
+  p {
+    text-align: center;
+    color: #001d3d;
+  }
+
+  button {
+    width: 50%;
+    background-color: var(--yellow);
+    color: var(--main);
+  }
+}
