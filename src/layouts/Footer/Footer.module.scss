@@ -1,72 +1,62 @@
 .main {
-  width: 100%;
-  background-color: #002e46;
-  padding: 40px 0px 15px 0px;
+  background: linear-gradient(180deg, #000814 0%, #003566 100%);
+  padding: 6% 0px 3% 0px;
 
   p {
-    color: #fff;
+    color: white;
   }
 }
 
-.footer_top {
-  margin-bottom: 40px;
+.content {
   align-items: flex-start;
 }
 
 .part1 {
-  width: 25%;
+  width: 50%;
+  height: 100%;
 
   .logo {
-    width: 90px;
-    margin-bottom: 35px;
+    width: 60%;
+    display: block;
   }
 
-  .desc {
-    .title {
-      margin-bottom: 10px;
+  .rxs {
+    margin: 0px 0px 0px 15%;
+
+    img {
+      height: 22px;
+      margin: 0px 5px 0px 0px;
+      cursor: pointer;
+      display: block;
     }
   }
 }
 
 .part2 {
-  width: 60%;
-  padding: 4% 0px 0px 0px;
+  align-items: start;
 
-  .links_group {
-    .title {
-      margin-bottom: 18px;
-    }
+  .group {
+    margin: 0px 4vw 0px 0px;
+  }
 
-    .link {
-      font-weight: 200;
-      margin-bottom: 18px;
-      cursor: pointer;
-      transition: all 0.2s;
+  .main_title {
+    margin: 0px 0px 1.5vw 0px;
+  }
 
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+  .link {
+    margin: 0px 0px 10% 0px;
   }
 }
 
-.footer_bottom {
-  border-top: solid 1px rgba(255, 255, 255, 0.54);
-  padding: 12px 0px 0px 0px;
-  p {
-    font-weight: 200;
-  }
+.bottom {
+  margin-top: 3vw;
+}
 
-  .rxs {
-    img {
-      margin: 0px 0px 0px 8px;
-      height: 20px;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
+.payements {
+  img {
+    width: 35px;
+    display: block;
+    margin: 0px 5px 0px 0px;
+    cursor: pointer;
   }
 }

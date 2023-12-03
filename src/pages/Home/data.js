@@ -1,4 +1,5 @@
 import { exemple_item } from "../../assets/images/temp";
+import { track, wallet, call, refound } from "../../assets/svgs";
 
 export const list_auctions = [
   "All auctions",
@@ -187,5 +188,32 @@ export const finished_auctions = [
     end_soon: false,
     finis_price: "13",
     hearted: false,
+  },
+];
+
+export const delivery_process = [
+  {
+    icon: track,
+    title: "Free Shipping",
+    desc: "Délai de livraison de 4 jours ou moins, livraison gratuite et option de livraison accélérée.",
+    w: "w-3",
+  },
+  {
+    icon: wallet,
+    title: "Paiement sécurisé",
+    desc: "Toutes Cartes Acceptées et sécurisées",
+    w: "w-2",
+  },
+  {
+    icon: call,
+    title: "Online Support 24/7 ",
+    desc: "Des réponses à toute demande commerciale 24h/24 et 7j/7 et en temps réel.",
+    w: "w-3",
+  },
+  {
+    icon: refound,
+    title: "Money Guarantee",
+    desc: "30 Day Money Back",
+    w: "w-2",
   },
 ];

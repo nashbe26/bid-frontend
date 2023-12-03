@@ -5,7 +5,7 @@ import TitleAndSubTitle from "../../components/TitleAndSubTitle/TitleAndSubTitle
 import MainContainer from "../../components/Containers/MainContainer";
 import Button from "../../components/Buttons/Button";
 import Flex from "../../components/Flex/Flex";
-import { P16 } from "../../components/TXT/TXT";
+import { P12, P14, P16 } from "../../components/TXT/TXT";
 
 import useLoadCaros from "../../hooks/useLoadCaros";
 
@@ -16,6 +16,7 @@ import {
   live_auctions,
   ending_soon,
   finished_auctions,
+  delivery_process,
 } from "./data";
 import Grid from "../../components/Grid/Grid";
 
@@ -44,6 +45,7 @@ function Home() {
         sub_title="Better luck next time ! "
         auctions={finished_auctions}
       />
+      <StepsDelivery />
     </div>
   );
 }
@@ -152,4 +154,26 @@ const AuctionSection = ({ title = "", sub_title = "", auctions = [] }) => {
   );
 };
 
-// ######################### Others #########################
+const StepsDelivery = () => {
+  return (
+    <MainContainer className={styles.steps_delivery}>
+      <Flex flex="between" className={styles.items}>
+        {delivery_process.map((item, index) => {
+          return (
+            <Flex className={`${styles.item} ${styles[item.w]}`} key={index}>
+              <div className={styles.icon}>
+                <img src={item.icon} alt="icon" />
+              </div>
+              <div className={styles.text}>
+                <P14 weight={500} className={styles.title}>
+                  {item.title}
+                </P14>
+                <P12 className={styles.desc}>{item.desc}</P12>
+              </div>
+            </Flex>
+          );
+        })}
+      </Flex>
+    </MainContainer>
+  );
+};

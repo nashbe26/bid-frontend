@@ -3,6 +3,7 @@ import "./App.scss";
 
 import Navbar from "./layouts/Navbar/Navbar";
 import Home from "./pages/Home/Home";
+import Footer from "./layouts/Footer/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Navigate to="/home" />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

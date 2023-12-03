@@ -1,87 +1,90 @@
+import {
+  rx_f,
+  rx_in,
+  rx_insta,
+  rx_whatsup,
+  payement_meothods,
+} from "../../assets/svgs";
+
+const { american_express, mastercard, mastero, paypal, postepay, visa } =
+  payement_meothods;
+
+export const payements = [
+  {
+    icon: paypal,
+    link: "https://www.paypal.com",
+  },
+  {
+    icon: american_express,
+    link: "https://www.americanexpress.com",
+  },
+  {
+    icon: mastero,
+    link: "https://www.mastero.com",
+  },
+  {
+    icon: postepay,
+    link: "https://www.postepay.com",
+  },
+  {
+    icon: visa,
+    link: "https://www.visa.com",
+  },
+  {
+    icon: mastercard,
+    link: "https://www.mastercard.com",
+  },
+];
+
+export const external_links = [
+  {
+    icon: rx_in,
+    link: "https://www.linkedin.com",
+  },
+  {
+    icon: rx_f,
+    link: "https://www.facebook.com",
+  },
+  {
+    icon: rx_insta,
+    link: "https://www.instagram.com",
+  },
+
+  {
+    icon: rx_whatsup,
+    link: "https://www.whatsapp.com",
+  },
+];
+
 export const LinksGroups = [
   {
-    title: "Découvrir",
+    title: "About us",
     links: [
       {
-        text: "Comment ça marche ?",
-        link: "/comment-ça-marche",
+        text: "Customer Service",
+        link: "/customer-service",
       },
       {
-        text: "Eco responsabilité",
-        link: "/",
+        text: "Contact us ↗",
+        link: "/contact-us",
       },
       {
-        text: "Ethique et règles de la plateforme",
-        link: "/",
-      },
-      {
-        text: "Qui sommes-nous",
-        link: "/",
+        text: "Terms and conditions",
+        link: "/terms-and-conditions",
       },
     ],
   },
   {
-    title: "Le coindine",
+    title: "Conditions",
     links: [
       {
-        text: "Politique de Confidentialité",
-        link: "/",
+        text: "Information",
+        link: "/information",
       },
       {
-        text: "Politique de remboursement",
-        link: "/",
-      },
-      {
-        text: "Politique de cookies",
-        link: "/",
-      },
-      {
-        text: "Termes et Conditions",
-        link: "/",
-      },
-    ],
-  },
-  {
-    title: "Aide",
-    links: [
-      {
-        text: "Centre d'aide",
-        link: "/",
-      },
-      {
-        text: "Confiance et sécurité",
-        link: "/",
-      },
-      {
-        text: "Qui sommes-nous",
-        link: "/",
-      },
-      {
-        text: "Nous contacter",
-        link: "/",
+        text: "Cookies",
+        link: "/cookies",
       },
     ],
   },
 ];
-
-export const LinkGroupExmp = {
-  title: "",
-  links: [
-    {
-      text: "",
-      link: "/",
-    },
-    {
-      text: "",
-      link: "/",
-    },
-    {
-      text: "",
-      link: "/",
-    },
-    {
-      text: "",
-      link: "/",
-    },
-  ],
-};
