@@ -18,6 +18,7 @@ import rx_f from "./icons/rx_f.svg";
 import rx_in from "./icons/rx_in.svg";
 import rx_insta from "./icons/rx_insta.svg";
 import rx_whatsup from "./icons/rx_whatsup.svg";
+import empty_box from "./icons/empty_box.svg";
 
 import american_express from "./icons/payement_methods/ae.svg";
 import mastercard from "./icons/payement_methods/mastercard.svg";
@@ -26,6 +27,16 @@ import paypal from "./icons/payement_methods/ppl.svg";
 import postepay from "./icons/payement_methods/postepay.svg";
 import visa from "./icons/payement_methods/visa.svg";
 
+import auc_type1 from "./icons/icons_auctions/1.svg";
+import auc_type2 from "./icons/icons_auctions/2.svg";
+import auc_type3 from "./icons/icons_auctions/3.svg";
+import auc_type4 from "./icons/icons_auctions/4.svg";
+import auc_type5 from "./icons/icons_auctions/5.svg";
+import auc_type6 from "./icons/icons_auctions/6.svg";
+import auc_type7 from "./icons/icons_auctions/7.svg";
+import auc_type8 from "./icons/icons_auctions/8.svg";
+import auc_type9 from "./icons/icons_auctions/9.svg";
+
 const payement_meothods = {
   american_express,
   mastercard,
@@ -33,6 +44,18 @@ const payement_meothods = {
   paypal,
   postepay,
   visa,
+};
+
+const icons_auctions = {
+  auc_type1,
+  auc_type2,
+  auc_type3,
+  auc_type4,
+  auc_type5,
+  auc_type6,
+  auc_type7,
+  auc_type8,
+  auc_type9,
 };
 
 export {
@@ -56,5 +79,9 @@ export {
   rx_in,
   rx_insta,
   rx_whatsup,
+  empty_box,
+  // payements
   payement_meothods,
+  // icons auctions
+  icons_auctions,
 };

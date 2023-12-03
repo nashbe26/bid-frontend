@@ -19,15 +19,15 @@ const c_type = {
 
 const empty_auction = {
   live: true,
-  title: "Sony ZX330BT",
-  price: "35.00",
+  title: "",
+  price: "",
   img: "",
-  name_bid: "George",
-  starting_price: "1.77",
-  with_icon: "company",
+  name_bid: "",
+  starting_price: "",
+  with_icon: "",
   end_date: new Date(),
   end_soon: false,
-  finis_price: "13",
+  finis_price: "",
   hearted: false,
 };
 

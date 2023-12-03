@@ -18,9 +18,8 @@ import {
   finished_auctions,
   delivery_process,
 } from "./data";
-import Grid from "../../components/Grid/Grid";
 
-import CardAuction from "../../components/Cards/CardAuction/CardAuction";
+import AuctionSection from "../../components/AuctionSection/AuctionSection";
 
 function Home() {
   return (
@@ -137,19 +136,6 @@ const WhoWeAre = () => {
           <img src={card_home} alt="" />
         </Flex>
       </Flex>
-    </MainContainer>
-  );
-};
-
-const AuctionSection = ({ title = "", sub_title = "", auctions = [] }) => {
-  return (
-    <MainContainer className={styles.auction_section}>
-      <TitleAndSubTitle title={title} sub_title={sub_title} />
-      <Grid className={styles.cards}>
-        {auctions.map((item, index) => {
-          return <CardAuction key={index} auction={item} />;
-        })}
-      </Grid>
     </MainContainer>
   );
 };
