@@ -31,11 +31,11 @@ const empty_auction = {
   hearted: false,
 };
 
-const CardAuction = ({ auction = empty_auction }) => {
+const CardAuction = ({ auction = empty_auction, className = "" }) => {
   let styles_state = auction.live ? styles.live : styles.closed;
 
   return (
-    <div className={`${styles.auction} ${styles_state}`}>
+    <div className={`${styles.auction} ${styles_state} ${className}`}>
       <Header auction={auction} />
       <Image auction={auction} />
       <EndSoon auction={auction} />

@@ -5,13 +5,21 @@ import TitleAndSubTitle from "../TitleAndSubTitle/TitleAndSubTitle";
 import Grid from "../Grid/Grid";
 import CardAuction from "../Cards/CardAuction/CardAuction";
 
-const AuctionSection = ({ title = "", sub_title = "", auctions = [] }) => {
+const AuctionSection = ({
+  title = "",
+  sub_title = "",
+  auctions = [],
+  cardclassName = "",
+  className = "",
+}) => {
   return (
-    <MainContainer className={styles.auction_section}>
+    <MainContainer className={`${styles.auction_section} ${className}`}>
       <TitleAndSubTitle title={title} sub_title={sub_title} />
       <Grid className={styles.cards}>
         {auctions.map((item, index) => {
-          return <CardAuction key={index} auction={item} />;
+          return (
+            <CardAuction key={index} auction={item} className={cardclassName} />
+          );
         })}
       </Grid>
     </MainContainer>

@@ -1,0 +1,31 @@
+.auction_types {
+  margin-bottom: 3%;
+}
+
+.parts {
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.part1 {
+  width: 30%;
+  box-shadow: 12px 10px 21px rgba(0, 53, 102, 0.07);
+  transform: translateX(-4vw);
+}
+
+.part2 {
+  width: 100%;
+  padding: 3% 0px 0px 00px;
+
+  .auctions_section {
+    width: 100%;
+  }
+}
+
+.opened_filter {
+  width: 70%;
+  .card {
+    grid-column: span 4;
+  }
+}

@@ -7,16 +7,14 @@ import Flex from "../../components/Flex/Flex";
 import { auctions_types } from "./data";
 import { P13, P16 } from "../../components/TXT/TXT";
 
-const AuctionsTypes = () => {
+const AuctionsTypes = ({ className = "" }) => {
   const { current, Next, Prev, hasNext, hasPrev } = useLoadCaros(
     auctions_types,
     9
   );
 
-  console.log(current);
-
   return (
-    <div className={styles.main_lis_auctions}>
+    <div className={`${styles.main_lis_auctions} ${className}`}>
       <MainContainer>
         <Flex flex="center" className={styles.list_auctions}>
           {hasPrev && (
