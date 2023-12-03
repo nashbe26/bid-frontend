@@ -19,6 +19,8 @@ import rx_in from "./icons/rx_in.svg";
 import rx_insta from "./icons/rx_insta.svg";
 import rx_whatsup from "./icons/rx_whatsup.svg";
 import empty_box from "./icons/empty_box.svg";
+import close from "./icons/close.svg";
+import white_close from "./icons/white_close.svg";
 
 import american_express from "./icons/payement_methods/ae.svg";
 import mastercard from "./icons/payement_methods/mastercard.svg";
@@ -80,6 +82,8 @@ export {
   rx_insta,
   rx_whatsup,
   empty_box,
+  close,
+  white_close,
   // payements
   payement_meothods,
   // icons auctions

@@ -1,4 +1,5 @@
 import { exemple_item } from "../../assets/images/temp";
+import { company, people } from "../../assets/svgs";
 
 export const company_live_auctions = [
   {
@@ -159,5 +160,16 @@ export const individual_live_auctions = [
     end_soon: false,
     finis_price: "13",
     hearted: false,
+  },
+];
+
+export const types_auctions = [
+  {
+    title: "Company",
+    icon: company,
+  },
+  {
+    title: "Individual",
+    icon: people,
   },
 ];
