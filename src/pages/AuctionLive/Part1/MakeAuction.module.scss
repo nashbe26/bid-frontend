@@ -1,0 +1,168 @@
+.main {
+  border-radius: 11px;
+  background: #fff;
+  box-shadow: 0px 4px 11px 0px rgba(0, 53, 102, 0.2);
+  width: 100%;
+  padding: 2vw 0px 1vw 0px;
+
+  .head {
+    padding: 0px 3vw;
+
+    .price {
+      color: var(--yellow);
+    }
+  }
+}
+
+// ############################# CIRCLE #############################
+
+.c_container {
+  width: 100%;
+  height: fit-content;
+
+  margin-top: -30px;
+  align-items: flex-start;
+
+  .c1 {
+    width: 28%;
+    aspect-ratio: 1/1;
+    border-radius: 500px;
+    border: 8px solid var(--blue-dark);
+    box-shadow: 0px 0px 16px 0px rgba(0, 29, 61, 0.24);
+
+    position: relative;
+  }
+
+  .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    flex-direction: column;
+
+    h1 {
+      font-size: 120px;
+      font-family: PoetsenOne;
+      color: var(--blue-dark);
+    }
+
+    p {
+      position: absolute;
+      bottom: 15%;
+    }
+  }
+
+  .content2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    transform: scaleX(-1) translateX(1%);
+
+    .c2 {
+      transform: rotate(225deg);
+      stroke-width: 1.2;
+      width: 95%;
+      stroke: #fff;
+      filter: drop-shadow(0px 0px 13px rgba(0, 29, 61, 0.1));
+
+      //   animation: progress alternate ease-in-out 2s infinite;
+    }
+  }
+
+  .content3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    transform: scaleX(-1) translateX(1%);
+
+    .c2 {
+      transform: rotate(225deg);
+      stroke-width: 1.6;
+      stroke: #001d3d;
+      width: 95%;
+    }
+  }
+}
+
+// @keyframes progress {
+//   0% {
+//     stroke: #fff;
+//   }
+
+//   70% {
+//     stroke: var(--blue-dark);
+//   }
+
+//   100% {
+//     stroke: var(--blue-dark);
+//   }
+// }
+
+// ############################# BUTTONS #############################
+
+.buttons_selects {
+  flex-direction: column;
+  padding: 3% 0px;
+
+  .place_bet {
+    background-color: var(--blue-dark);
+    font-size: 18px;
+    font-weight: 400;
+    padding: 12px 12%;
+    border-radius: 11px;
+    box-shadow: 0px 4px 11px 0px rgba(0, 53, 102, 0.2);
+  }
+
+  .choises {
+    margin-top: 3vw;
+    width: 100%;
+
+    .choise {
+      background-color: var(--yellow2);
+      color: var(--blue-dark);
+      font-size: 18px;
+      font-weight: 400;
+      padding: 4px 5%;
+      border-radius: 5px;
+      box-shadow: 0px 0px 11px 0px rgba(0, 53, 102, 0.2);
+      margin: 0px 1.5%;
+    }
+  }
+
+  border-bottom: solid 1px rgba(0, 29, 61, 0.24);
+}
+
+// ############################# Table #############################
+
+.table {
+  width: 100%;
+  border-spacing: 0px;
+
+  .th {
+    color: var(--blue-dark) !important;
+    background-color: white !important;
+  }
+
+  th {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--blue-dark);
+    padding: 15px 0px;
+  }
+
+  tr:nth-child(odd) {
+    background-color: var(--blue-dark);
+    color: white;
+    box-shadow: 0px 4px 11px 0px rgba(0, 53, 102, 0.2);
+  }
+
+  td {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 100 !important;
+    padding: 8px 0px;
+  }
+}
