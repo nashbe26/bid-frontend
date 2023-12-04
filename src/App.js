@@ -11,6 +11,7 @@ import MyAuctionWon from "./pages/MyAuctionWon/MyAuctionWon";
 import Packs from "./pages/Packs/Packs";
 import Settings from "./pages/Settings/Settings";
 import AuctionLive from "./pages/AuctionLive/AuctionLive";
+import TermsAndCond from "./pages/TermsAndCond/TermsAndCond";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/departments" element={<Departments />} />
         <Route path="/my-auctions-won" element={<MyAuctionWon />} />
         <Route path="/live-auctions" element={<AuctionLive />} />
+        <Route path="/terms-and-conditions" element={<TermsAndCond />} />
         <Route path="/packs" element={<Packs />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/" element={<Navigate to="/home" />} />

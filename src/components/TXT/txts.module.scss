@@ -1,5 +1,6 @@
 @use "../../assets/scss/media-queries.scss" as *;
 
+.h49,
 .h42,
 .h40,
 .h38,
@@ -19,6 +20,14 @@
   line-height: normal;
   font-weight: 400;
   color: var(--main);
+}
+
+.h49 {
+  font-size: 49px;
+
+  @include lt-md {
+    font-size: 45px;
+  }
 }
 
 .h42 {

@@ -1,0 +1,44 @@
+.main {
+  padding: 5vw 0px;
+
+  * {
+    color: var(--blue-dark);
+  }
+
+  hr {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.33);
+    border: none;
+    outline: none;
+    display: block;
+
+    margin: 2.5vw 0px;
+  }
+}
+
+.main_title {
+  margin-bottom: 1%;
+}
+
+.logo_container {
+  width: 100%;
+  padding: 10vw 0px 8vw 0px;
+  background-color: var(--blue-dark);
+
+  img {
+    width: 80%;
+  }
+}
+
+.content_container {
+  width: 100%;
+}
+
+.content {
+  width: 70%;
+  background: #f4f4f4;
+  margin-top: -6vw;
+
+  padding: 4vw;
+}

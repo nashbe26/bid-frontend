@@ -1,6 +1,23 @@
 import React from "react";
 import styles from "./txts.module.scss";
 
+export const H49 = ({
+  children,
+  className,
+  onClick = () => {},
+  weight = 400,
+}) => {
+  return (
+    <h2
+      className={`${styles.h49} ${className}`}
+      style={{ fontWeight: weight }}
+      onClick={onClick}
+    >
+      {children}
+    </h2>
+  );
+};
+
 export const H42 = ({
   children,
   className,
