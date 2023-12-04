@@ -24,6 +24,10 @@ import white_close from "./icons/white_close.svg";
 import cup from "./icons/cup.svg";
 import verified_1 from "./icons/verified_1.svg";
 import reward from "./icons/reward.svg";
+import user_icon from "./icons/user.svg";
+import edit_icon from "./icons/edit.svg";
+import email_icon from "./icons/email.svg";
+import kouba_icon from "./icons/kouba.svg";
 
 import american_express from "./icons/payement_methods/ae.svg";
 import mastercard from "./icons/payement_methods/mastercard.svg";
@@ -100,6 +104,10 @@ export {
   cup,
   verified_1,
   reward,
+  user_icon,
+  edit_icon,
+  email_icon,
+  kouba_icon,
   // payements
   payement_meothods,
   // icons auctions

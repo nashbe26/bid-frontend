@@ -6,7 +6,7 @@ import Flex from "../../components/Flex/Flex";
 import { packs } from "./data";
 
 import { reward, verified_1 } from "../../assets/svgs";
-import { H32, H36, H38, P12, P14, P16 } from "../../components/TXT/TXT";
+import { H36, P12, P14, P16 } from "../../components/TXT/TXT";
 import Button from "../../components/Buttons/Button";
 
 function Packs() {
