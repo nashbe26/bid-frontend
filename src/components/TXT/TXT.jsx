@@ -35,6 +35,23 @@ export const H38 = ({
   );
 };
 
+export const H36 = ({
+  children,
+  className,
+  onClick = () => {},
+  weight = 400,
+}) => {
+  return (
+    <h2
+      className={`${styles.h36} ${className}`}
+      style={{ fontWeight: weight }}
+      onClick={onClick}
+    >
+      {children}
+    </h2>
+  );
+};
+
 export const H32 = ({
   children,
   className,

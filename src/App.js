@@ -8,6 +8,7 @@ import Tracking from "./pages/Tracking/Tracking";
 import EndingSoon from "./pages/EndingSoon/EndingSoon";
 import Departments from "./pages/Departments/Departments";
 import MyAuctionWon from "./pages/MyAuctionWon/MyAuctionWon";
+import Packs from "./pages/Packs/Packs";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/ending-soon" element={<EndingSoon />} />
         <Route path="/departments" element={<Departments />} />
         <Route path="/my-auctions-won" element={<MyAuctionWon />} />
+        <Route path="/packs" element={<Packs />} />
         <Route path="/" element={<Navigate to="/home" />} />
       </Routes>
       <Footer />

@@ -3,6 +3,7 @@
 .h42,
 .h40,
 .h38,
+.h36,
 .h32,
 .h24,
 .p21,
@@ -34,6 +35,15 @@
     font-size: 34px;
   }
 }
+
+.h36 {
+  font-size: 36px;
+
+  @include lt-md {
+    font-size: 32px;
+  }
+}
+
 .h32 {
   font-size: 32px;
 

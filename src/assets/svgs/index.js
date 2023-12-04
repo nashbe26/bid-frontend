@@ -22,6 +22,8 @@ import empty_box from "./icons/empty_box.svg";
 import close from "./icons/close.svg";
 import white_close from "./icons/white_close.svg";
 import cup from "./icons/cup.svg";
+import verified_1 from "./icons/verified_1.svg";
+import reward from "./icons/reward.svg";
 
 import american_express from "./icons/payement_methods/ae.svg";
 import mastercard from "./icons/payement_methods/mastercard.svg";
@@ -39,6 +41,10 @@ import auc_type6 from "./icons/icons_auctions/6.svg";
 import auc_type7 from "./icons/icons_auctions/7.svg";
 import auc_type8 from "./icons/icons_auctions/8.svg";
 import auc_type9 from "./icons/icons_auctions/9.svg";
+
+import pack1 from "./icons/packs_icons/1.svg";
+import pack2 from "./icons/packs_icons/2.svg";
+import pack3 from "./icons/packs_icons/3.svg";
 
 const payement_meothods = {
   american_express,
@@ -59,6 +65,12 @@ const icons_auctions = {
   auc_type7,
   auc_type8,
   auc_type9,
+};
+
+const packs_icons = {
+  pack1,
+  pack2,
+  pack3,
 };
 
 export {
@@ -86,8 +98,12 @@ export {
   close,
   white_close,
   cup,
+  verified_1,
+  reward,
   // payements
   payement_meothods,
   // icons auctions
   icons_auctions,
+  // packs icons
+  packs_icons,
 };
