@@ -30,6 +30,7 @@ import email_icon from "./icons/email.svg";
 import kouba_icon from "./icons/kouba.svg";
 import down_arrow_select from "./arrows/down_arrow_select.svg";
 import triangle from "./arrows/triangle.svg";
+import crown from "./icons/crown.svg";
 
 import american_express from "./icons/payement_methods/ae.svg";
 import mastercard from "./icons/payement_methods/mastercard.svg";
@@ -112,6 +113,7 @@ export {
   kouba_icon,
   down_arrow_select,
   triangle,
+  crown,
   // payements
   payement_meothods,
   // icons auctions

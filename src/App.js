@@ -17,6 +17,7 @@ import useScrollToTopOnRouteChange from "./hooks/useToTop";
 import ClosedAuctions from "./pages/ClosedAuctions/ClosedAuctions";
 import LiveAuctions from "./pages/LiveAuctions/LiveAuctions";
 import SellYourArticle from "./pages/SellYourArticle/SellYourArticle";
+import AuctionsClosed from "./pages/AuctionsClosed/AuctionsClosed";
 
 function App() {
   useScrollToTopOnRouteChange();
@@ -33,6 +34,7 @@ function App() {
         <Route path="/auctions-closed" element={<ClosedAuctions />} />
 
         <Route path="/live-auctions/:id" element={<AuctionLive />} />
+        <Route path="/auctions-closed/:id" element={<AuctionsClosed />} />
         <Route path="/my-auctions-won" element={<MyAuctionWon />} />
         <Route path="/terms-and-conditions" element={<TermsAndCond />} />
         <Route path="/packs" element={<Packs />} />

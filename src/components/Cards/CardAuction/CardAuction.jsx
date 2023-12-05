@@ -12,7 +12,7 @@ import { P14, P17, P18, P19 } from "../../TXT/TXT";
 import Flex from "../../Flex/Flex";
 import Button from "../../Buttons/Button";
 import { sold_out } from "../../../assets/images";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const c_type = {
   company: blue_comp,

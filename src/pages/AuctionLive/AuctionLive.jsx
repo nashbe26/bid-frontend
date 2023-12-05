@@ -4,12 +4,13 @@ import MainContainer from "../../components/Containers/MainContainer";
 import MakeAuction from "./MakeAuction/MakeAuction";
 
 import BlogSection from "./BlogSection/BlogSection";
+import { blog } from "./data";
 
 function AuctionLive() {
   return (
     <MainContainer className={styles.main}>
       <MakeAuction />
-      <BlogSection />
+      <BlogSection data={blog} />
     </MainContainer>
   );
 }
