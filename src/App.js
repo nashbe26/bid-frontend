@@ -13,20 +13,31 @@ import Settings from "./pages/Settings/Settings";
 import AuctionLive from "./pages/AuctionLive/AuctionLive";
 import TermsAndCond from "./pages/TermsAndCond/TermsAndCond";
 
+import useScrollToTopOnRouteChange from "./hooks/useToTop";
+import ClosedAuctions from "./pages/ClosedAuctions/ClosedAuctions";
+import LiveAuctions from "./pages/LiveAuctions/LiveAuctions";
+import SellYourArticle from "./pages/SellYourArticle/SellYourArticle";
+
 function App() {
+  useScrollToTopOnRouteChange();
   return (
     <div className="App">
       <Navbar />
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/tracking" element={<Tracking />} />
+
         <Route path="/ending-soon" element={<EndingSoon />} />
         <Route path="/departments" element={<Departments />} />
+        <Route path="/live-auctions" element={<LiveAuctions />} />
+        <Route path="/auctions-closed" element={<ClosedAuctions />} />
+
+        <Route path="/live-auctions/:id" element={<AuctionLive />} />
         <Route path="/my-auctions-won" element={<MyAuctionWon />} />
-        <Route path="/live-auctions" element={<AuctionLive />} />
         <Route path="/terms-and-conditions" element={<TermsAndCond />} />
         <Route path="/packs" element={<Packs />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/add-product" element={<SellYourArticle />} />
         <Route path="/" element={<Navigate to="/home" />} />
       </Routes>
       <Footer />

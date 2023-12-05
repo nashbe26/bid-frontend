@@ -28,6 +28,8 @@ import user_icon from "./icons/user.svg";
 import edit_icon from "./icons/edit.svg";
 import email_icon from "./icons/email.svg";
 import kouba_icon from "./icons/kouba.svg";
+import down_arrow_select from "./arrows/down_arrow_select.svg";
+import triangle from "./arrows/triangle.svg";
 
 import american_express from "./icons/payement_methods/ae.svg";
 import mastercard from "./icons/payement_methods/mastercard.svg";
@@ -108,6 +110,8 @@ export {
   edit_icon,
   email_icon,
   kouba_icon,
+  down_arrow_select,
+  triangle,
   // payements
   payement_meothods,
   // icons auctions

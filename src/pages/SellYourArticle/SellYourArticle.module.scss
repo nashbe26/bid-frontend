@@ -1,0 +1,59 @@
+.main {
+  padding: 5% 0px;
+
+  h2 {
+    color: #001d3d;
+  }
+}
+
+.sub_container {
+  width: 83%;
+  margin: auto;
+  padding: 3vw 0px;
+}
+
+.box {
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.13);
+  border-radius: 20px;
+  background: #fff;
+  margin-bottom: 3%;
+}
+
+.input {
+  width: 35% !important;
+}
+
+.row {
+  flex-wrap: nowrap;
+  padding: 3% 4%;
+  align-items: flex-start;
+}
+
+.with_border {
+  border-top: solid 1px #e9f0f2;
+}
+
+.img_upload {
+  border-radius: 4px;
+  padding: 6vw 0px;
+  border: 1px dashed rgba(0, 0, 0, 0.21);
+  margin-top: 20px;
+
+  button {
+    border: 1px solid #001d3d !important;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #001d3d !important;
+    padding: 10px 50px;
+  }
+}
+
+.stubmit_btn {
+  font-size: 14px;
+  background: #001d3d;
+  border-radius: 500px;
+  padding: 10px 50px;
+  margin-top: 2%;
+  font-weight: 300;
+}

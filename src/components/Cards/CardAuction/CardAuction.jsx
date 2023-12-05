@@ -12,6 +12,7 @@ import { P14, P17, P18, P19 } from "../../TXT/TXT";
 import Flex from "../../Flex/Flex";
 import Button from "../../Buttons/Button";
 import { sold_out } from "../../../assets/images";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const c_type = {
   company: blue_comp,
@@ -66,6 +67,13 @@ const Image = ({ auction = empty_auction }) => {
   let cercle_item = c_type[auction.with_icon] || null;
   let over_img = auction.win ? cup : sold_out;
 
+  const navigate = useNavigate();
+  const SeeEndAuction = () => {
+    if (!auction.live && !auction.win) {
+      navigate(`/auctions-closed/48741894613`);
+    }
+  };
+
   return (
     <Flex flex="center" className={styles.auction_img}>
       <div className={styles.img}>
@@ -81,7 +89,11 @@ const Image = ({ auction = empty_auction }) => {
       </div>
 
       {!auction.live && (
-        <Flex flex="center" className={styles.overlay_closed}>
+        <Flex
+          flex="center"
+          onClick={SeeEndAuction}
+          className={styles.overlay_closed}
+        >
           <img src={over_img} alt="sold out" />
         </Flex>
       )}
@@ -98,7 +110,7 @@ const EndSoon = ({ auction = empty_auction }) => {
   ) : null;
 };
 
-const Content = ({ auction = empty_auction }) => {
+const Content = ({ auction = empty_auction, JoinAuction = () => {} }) => {
   let end_price = auction.live ? "Starting price" : "Finised price";
 
   return (
@@ -119,7 +131,7 @@ const Content = ({ auction = empty_auction }) => {
 
       {auction.live && (
         <Button type="fill" fullWidth>
-          Join Biding
+          <NavLink to="/live-auctions/549651894">Join Biding</NavLink>
         </Button>
       )}
     </div>
