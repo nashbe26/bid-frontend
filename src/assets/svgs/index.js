@@ -31,6 +31,12 @@ import kouba_icon from "./icons/kouba.svg";
 import down_arrow_select from "./arrows/down_arrow_select.svg";
 import triangle from "./arrows/triangle.svg";
 import crown from "./icons/crown.svg";
+import play_circle from "./icons/play.svg";
+import cup_circle from "./icons/cup_circle.svg";
+import delivery from "./icons/delivery.svg";
+import coins from "./icons/coins.svg";
+import medias from "./icons/medias.svg";
+import timing from "./icons/timing.svg";
 
 import american_express from "./icons/payement_methods/ae.svg";
 import mastercard from "./icons/payement_methods/mastercard.svg";
@@ -114,6 +120,12 @@ export {
   down_arrow_select,
   triangle,
   crown,
+  play_circle,
+  cup_circle,
+  delivery,
+  coins,
+  medias,
+  timing,
   // payements
   payement_meothods,
   // icons auctions
