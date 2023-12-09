@@ -11,7 +11,7 @@ const usePopup = () => {
     setOpen(false);
   };
 
-  return [open, handle_open, handle_close];
+  return { open, handle_open, handle_close };
 };
 
 export default usePopup;

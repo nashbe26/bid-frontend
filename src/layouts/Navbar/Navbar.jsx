@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Navbar.module.scss";
 
 import { logo1, loop } from "../../assets/svgs/index";
@@ -10,6 +10,8 @@ import UseIsContainUrl from "../../hooks/UseIsContainUrl";
 import { P16 } from "../../components/TXT/TXT";
 
 import Button from "../../components/Buttons/Button";
+import { useDispatch } from "react-redux";
+import { open_auth } from "../../store/popups.reducer";
 
 function Navbar() {
   return (
@@ -83,9 +85,17 @@ const Link = ({ link = { name: "", link: "" } }) => {
 };
 
 const Login = () => {
+  const dispatch = useDispatch();
+
+  const open_login = () => {
+    dispatch(open_auth());
+  };
+
   return (
     <div className={styles.login}>
-      <Button type="outlined">Login</Button>
+      <Button type="outlined" onClick={open_login}>
+        Login
+      </Button>
     </div>
   );
 };

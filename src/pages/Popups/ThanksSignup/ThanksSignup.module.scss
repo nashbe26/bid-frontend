@@ -1,0 +1,28 @@
+.main {
+  background-color: white;
+  border-radius: 10px;
+  padding: 4vw 4vw;
+  width: 40vw;
+
+  img {
+    width: 60%;
+    display: block;
+    transform: translateX(-1.5vw);
+  }
+}
+
+.txts {
+  margin-top: 3vw;
+}
+
+.title {
+  text-align: center;
+  margin: 0px 0px 1vw 0px;
+  color: var(--blue-dark);
+}
+
+.desc {
+  text-align: center;
+  color: #40455b;
+  line-height: 20px;
+}

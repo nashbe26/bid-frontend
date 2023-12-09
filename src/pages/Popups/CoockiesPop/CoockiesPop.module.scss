@@ -1,0 +1,44 @@
+.main {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2vw 3vw;
+}
+
+.p1 {
+  color: rgba(0, 29, 61, 0.43);
+  text-align: center;
+  margin: 0px 0px 10px 0px;
+  letter-spacing: 0.48px;
+}
+
+.p2 {
+  color: var(--blue-dark);
+  text-align: center;
+  letter-spacing: 0.65px;
+}
+
+.btns {
+  width: 100%;
+  margin: 20px 0px 0px 0px;
+}
+
+.btn1,
+.btn2 {
+  width: 40%;
+  padding: 8px 0px;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.72px;
+}
+
+.btn1 {
+  background-color: white;
+  border: solid 1px var(--blue-dark);
+  color: var(--blue-dark);
+}
+
+.btn2 {
+  background-color: var(--blue-dark);
+  border: solid 1px var(--blue-dark);
+  color: white;
+}

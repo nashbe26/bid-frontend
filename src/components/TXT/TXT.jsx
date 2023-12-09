@@ -273,6 +273,23 @@ export const P11 = ({
   );
 };
 
+export const P10 = ({
+  children,
+  className,
+  onClick = () => {},
+  weight = 400,
+}) => {
+  return (
+    <p
+      className={`${styles.p10} ${className}`}
+      style={{ fontWeight: weight }}
+      onClick={onClick}
+    >
+      {children}
+    </p>
+  );
+};
+
 export const P9 = ({
   children,
   className,

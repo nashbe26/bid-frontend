@@ -19,12 +19,15 @@ import LiveAuctions from "./pages/LiveAuctions/LiveAuctions";
 import SellYourArticle from "./pages/SellYourArticle/SellYourArticle";
 import AuctionsClosed from "./pages/AuctionsClosed/AuctionsClosed";
 import Informations from "./pages/Informations/Informations";
+import AllPopups from "./pages/Popups/AllPopups";
 
 function App() {
   useScrollToTopOnRouteChange();
+
   return (
     <div className="App">
       <Navbar />
+      <AllPopups />
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/tracking" element={<Tracking />} />

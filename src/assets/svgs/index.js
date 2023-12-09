@@ -37,6 +37,7 @@ import delivery from "./icons/delivery.svg";
 import coins from "./icons/coins.svg";
 import medias from "./icons/medias.svg";
 import timing from "./icons/timing.svg";
+import google_icon from "./icons/google.svg";
 
 import american_express from "./icons/payement_methods/ae.svg";
 import mastercard from "./icons/payement_methods/mastercard.svg";
@@ -126,6 +127,7 @@ export {
   coins,
   medias,
   timing,
+  google_icon,
   // payements
   payement_meothods,
   // icons auctions
