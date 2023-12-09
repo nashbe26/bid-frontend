@@ -86,7 +86,6 @@ const Link = ({ link = { name: "", link: "" } }) => {
 
 const Login = () => {
   const dispatch = useDispatch();
-
   const open_login = () => {
     dispatch(open_auth());
   };

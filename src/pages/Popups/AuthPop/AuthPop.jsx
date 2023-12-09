@@ -3,17 +3,7 @@ import styles from "./AuthPop.module.scss";
 import Popup from "../../../components/Dialogue/Dialogue";
 import { useDispatch, useSelector } from "react-redux";
 import { google_icon, logo1 } from "../../../assets/svgs";
-import {
-  H24,
-  H32,
-  P10,
-  P11,
-  P12,
-  P14,
-  P16,
-  P17,
-  P9,
-} from "../../../components/TXT/TXT";
+import { H24, P10, P12, P14, P16, P17 } from "../../../components/TXT/TXT";
 import { close_auth } from "../../../store/popups.reducer";
 import Flex from "../../../components/Flex/Flex";
 import Button from "../../../components/Buttons/Button";
