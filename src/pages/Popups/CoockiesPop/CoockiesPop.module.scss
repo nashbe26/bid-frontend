@@ -19,7 +19,7 @@
 
 .btns {
   width: 100%;
-  margin: 20px 0px 0px 0px;
+  margin: 20px 0px 15px 0px;
 }
 
 .btn1,
@@ -41,4 +41,11 @@
   background-color: var(--blue-dark);
   border: solid 1px var(--blue-dark);
   color: white;
+}
+
+.preferences {
+  color: var(--blue-dark);
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
 }

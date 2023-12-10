@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./CoockiesPop.module.scss";
 import Popup from "../../../components/Dialogue/Dialogue";
 import { P14 } from "../../../components/TXT/TXT";
 import Flex from "../../../components/Flex/Flex";
 import Button from "../../../components/Buttons/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { close_cookies } from "../../../store/popups.reducer";
+import { close_cookies, open_cookies } from "../../../store/popups.reducer";
 
 function CoockiesPop() {
   const popups = useSelector((state) => state.popups);
@@ -25,6 +25,13 @@ function CoockiesPop() {
     localStorage.setItem("cookies", false);
     handle_close();
   };
+
+  useEffect(() => {
+    const cookies = localStorage.getItem("cookies");
+    if (cookies === null) {
+      dispatch(open_cookies());
+    }
+  }, []);
 
   return (
     <Popup open={cookies_open} handleClose={handle_close}>
@@ -54,6 +61,10 @@ function CoockiesPop() {
           >
             ACCEPT ALL
           </Button>
+        </Flex>
+
+        <Flex>
+          <P14 className={styles.preferences}>PREFERENCES</P14>
         </Flex>
       </div>
     </Popup>
