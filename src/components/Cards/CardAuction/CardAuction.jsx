@@ -8,7 +8,7 @@ import {
   clock,
   cup,
 } from "../../../assets/svgs";
-import { P14, P17, P18, P19 } from "../../TXT/TXT";
+import { P14, P17, P18, P19, P12 } from "../../TXT/TXT";
 import Flex from "../../Flex/Flex";
 import Button from "../../Buttons/Button";
 import { sold_out } from "../../../assets/images";
@@ -83,7 +83,10 @@ const Image = ({ auction = empty_auction }) => {
       <div className={styles.overlay}>
         {auction.live && cercle_item && (
           <Flex flex="center" className={styles.cercle_item}>
-            <img src={cercle_item} alt="" />
+            <Flex flex="center" className={styles.cercle_item}>
+              <img src={cercle_item} alt="" />
+            </Flex>
+            <P12>{auction.company}</P12>
           </Flex>
         )}
       </div>

@@ -1,5 +1,5 @@
-import logo1 from "./logo1.svg";
-import logo2 from "./logo2.svg";
+import logo1 from "./logo1.png";
+import logo2 from "./logo2.png";
 import company from "./icons/company.svg";
 import loop from "./icons/loop.svg";
 import people from "./icons/people.svg";

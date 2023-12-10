@@ -9,6 +9,7 @@ export const live_auctions = [
     name_bid: "George",
     starting_price: "1.77",
     with_icon: "company",
+    company: "Like",
     end_date: new Date(new Date() + 1000 * 60 * 60 * 24 * 2),
     end_soon: false,
     finis_price: "13",
