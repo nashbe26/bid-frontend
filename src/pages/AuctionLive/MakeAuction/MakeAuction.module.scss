@@ -115,6 +115,35 @@
     box-shadow: 0px 4px 11px 0px rgba(0, 53, 102, 0.2);
   }
 
+  .amount {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    width: 100%;
+    padding: 2vw 3vw 0px 3vw;
+
+    .send {
+      background-color: var(--blue-dark);
+      font-size: 18px;
+      font-weight: 400;
+      padding: 12px 0px;
+      width: 30%;
+      border-radius: 11px;
+      box-shadow: 0px 4px 11px 0px rgba(0, 53, 102, 0.2);
+    }
+
+    input {
+      width: 70%;
+      border-radius: 11px;
+      padding: 12px 20px;
+      margin: 0px 2% 0px 0px;
+      font-size: 18px;
+      font-weight: 300;
+      box-shadow: 0px 4px 11px 0px rgba(0, 53, 102, 0.2);
+      outline: none;
+      border: none;
+    }
+  }
+
   .choises {
     margin-top: 3vw;
     width: 100%;

@@ -53,6 +53,11 @@ const ButtonsSelects = () => {
     <Flex className={styles.buttons_selects}>
       <Button className={styles.place_bet}>Place your bet</Button>
 
+      <Flex flex="between" className={styles.amount}>
+        <input type="text" placeholder="Amount" />
+        <Button className={styles.send}>Send</Button>
+      </Flex>
+
       <Flex className={styles.choises}>
         <Button className={styles.choise}>+10</Button>
         <Button className={styles.choise}>+20</Button>
