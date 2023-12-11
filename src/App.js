@@ -20,15 +20,16 @@ import SellYourArticle from "./pages/SellYourArticle/SellYourArticle";
 import AuctionsClosed from "./pages/AuctionsClosed/AuctionsClosed";
 import Informations from "./pages/Informations/Informations";
 import AllPopups from "./pages/Popups/AllPopups";
-import Scrollbar from "./utils/Scrollbar";
 import ContactUs from "./pages/ContactUs/ContactUs";
+
+// import Scrollbar from "./utils/Scrollbar";
 
 function App() {
   useScrollToTopOnRouteChange();
 
   return (
     <div className="App">
-      <Scrollbar />
+      {/* <Scrollbar /> */}
       <Navbar />
       <AllPopups />
       <Routes>
