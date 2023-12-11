@@ -38,6 +38,9 @@ import coins from "./icons/coins.svg";
 import medias from "./icons/medias.svg";
 import timing from "./icons/timing.svg";
 import google_icon from "./icons/google.svg";
+import email_contact from "./icons/email2.svg";
+import phone_contact from "./icons/phone.svg";
+import location_contact from "./icons/location.svg";
 
 import american_express from "./icons/payement_methods/ae.svg";
 import mastercard from "./icons/payement_methods/mastercard.svg";
@@ -128,6 +131,9 @@ export {
   medias,
   timing,
   google_icon,
+  email_contact,
+  phone_contact,
+  location_contact,
   // payements
   payement_meothods,
   // icons auctions

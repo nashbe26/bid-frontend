@@ -21,6 +21,7 @@ import AuctionsClosed from "./pages/AuctionsClosed/AuctionsClosed";
 import Informations from "./pages/Informations/Informations";
 import AllPopups from "./pages/Popups/AllPopups";
 import Scrollbar from "./utils/Scrollbar";
+import ContactUs from "./pages/ContactUs/ContactUs";
 
 function App() {
   useScrollToTopOnRouteChange();
@@ -38,7 +39,6 @@ function App() {
         <Route path="/departments" element={<Departments />} />
         <Route path="/live-auctions" element={<LiveAuctions />} />
         <Route path="/auctions-closed" element={<ClosedAuctions />} />
-
         <Route path="/live-auctions/:id" element={<AuctionLive />} />
         <Route path="/auctions-closed/:id" element={<AuctionsClosed />} />
         <Route path="/my-auctions-won" element={<MyAuctionWon />} />
@@ -47,7 +47,8 @@ function App() {
         <Route path="/packs" element={<Packs />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/add-product" element={<SellYourArticle />} />
-        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/*" element={<Navigate to="/home" />} />
       </Routes>
       <Footer />
     </div>
