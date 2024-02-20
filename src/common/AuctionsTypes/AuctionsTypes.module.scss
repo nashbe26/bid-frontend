@@ -1,3 +1,5 @@
+@import '../../assets/scss/media-queries.scss';
+
 .main_lis_auctions {
   filter: drop-shadow(-3px 4px 21px rgba(0, 53, 102, 0.07));
   background: #fff;
@@ -39,7 +41,9 @@
 
     padding: 1.6% 0.8%;
     user-select: none;
-
+    @include lt-md{
+      padding: 1.6% 2.8%;
+    }
     p {
       margin-top: 1vw;
     }

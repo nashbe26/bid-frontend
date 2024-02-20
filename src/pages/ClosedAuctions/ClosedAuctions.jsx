@@ -5,13 +5,14 @@ import AuctionSection from "../../components/AuctionSection/AuctionSection";
 import { ended_auctions } from "./data";
 import AuctionsTypes from "../../common/AuctionsTypes/AuctionsTypes";
 
-function ClosedAuctions() {
+function CommingAuctions() {
   return (
     <div className={styles.main}>
       <AuctionsTypes />
       <MainContainer>
         <AuctionSection
-          title="FINISHIED AUCTION​"
+         type="closed"
+          title="AUCTION CLOSED"
           sub_title="Better luck next time !"
           auctions={ended_auctions}
         />
@@ -20,4 +21,4 @@ function ClosedAuctions() {
   );
 }
 
-export default ClosedAuctions;
+export default CommingAuctions;

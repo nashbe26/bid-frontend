@@ -1,3 +1,14 @@
+@import '../../assets/scss/media-queries.scss';
+
 .main {
-  margin-top: 4vw;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  align-items: baseline;
+  .columnAv {
+    @include lt-md{
+      flex-direction: column;
+      gap: 10px;
+      align-items: inherit;
+    }
+  }
 }

@@ -11,6 +11,7 @@ function LiveAuctions() {
       <AuctionsTypes />
       <MainContainer>
         <AuctionSection
+          type="live"
           title="LIVE AUCTION"
           sub_title="Many items are live Now , join fast !"
           auctions={live_auctions}

@@ -4,6 +4,7 @@ import styles from "./Select.module.scss";
 import { down_arrow_select, triangle } from "../../../assets/svgs";
 import Flex from "../../Flex/Flex";
 import UseOutside from "../../../hooks/UseOutside";
+import { P12ERROR } from "../../TXT/TXT";
 
 function Select({
   placeholder = "Choisir une option",
@@ -14,12 +15,10 @@ function Select({
   label = "",
   options = [],
   type = 1, // 1 , 2
+  err
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState({
-    title: placeholder,
-    value: "",
-  });
+  const [selected, setSelected] = useState("");
   const type_class2 = type === 2 ? styles.type2 : "";
   const ref = useRef(null);
 
@@ -33,18 +32,14 @@ function Select({
 
   useEffect(() => {
     if (selected) {
-      onChange({ target: { name, value: selected.title } });
+      onChange({ target: { name, value: selected } });
     }
   }, [selected]);
-
-  useEffect(() => {
-    console.log("isOpen", isOpen);
-  }, [isOpen]);
 
   return (
     <div className={`${styles.main} ${className} ${type_class2}`} ref={ref}>
       <Flex flex="between" onClick={handle_open} className={styles.header}>
-        <span className={styles.value}>{selected.title}</span>
+        <span className={styles.value}>{selected}</span>
         <img
           className={styles.arrow}
           src={type === 1 ? down_arrow_select : triangle}
@@ -67,12 +62,13 @@ function Select({
                   setIsOpen(false);
                 }}
               >
-                {option.title}
+                {option}
               </div>
             );
           })}
         </div>
       )}
+      {err && <P12ERROR>This field is required</P12ERROR>}
     </div>
   );
 }

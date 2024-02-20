@@ -1,5 +1,7 @@
+@import './assets/scss/media-queries.scss';
 .App {
   overflow-y: overlay;
+  overflow-x: hidden;
 }
 
 * {

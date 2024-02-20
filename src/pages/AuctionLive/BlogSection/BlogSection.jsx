@@ -3,6 +3,7 @@ import styles from "./BlogSection.module.scss";
 
 import Flex from "../../../components/Flex/Flex";
 import { H32, P14 } from "../../../components/TXT/TXT";
+import { Link } from "react-router-dom";
 
 const emty = {
   left: {
@@ -18,33 +19,25 @@ const emty = {
   center: "",
 };
 
-const BlogSection = ({ data = emty }) => {
+const BlogSection = ({ data }) => {
+  console.log(data);
   return (
     <div className={styles.blogging}>
-      <Flex flex="between" className={styles.left}>
-        <div className={styles.text_part}>
-          <H32 weight={700}>{data.left.title}</H32>
-          <P14 weight={300}>{data.left.desc}</P14>
-        </div>
-        <img src={data.left.img} className={styles.b_img1} alt="" />
-      </Flex>
-      <Flex flex="between" className={styles.right}>
-        <img src={data.right.img} alt="" className={styles.b_img2} />
-        <div className={styles.text_part}>
-          <H32 weight={700}>{data.right.title}</H32>
-          {data.right.steps.map((step, index) => {
-            return (
-              <P14 key={index} weight={300}>
-                {step}
-              </P14>
-            );
-          })}
-        </div>
-      </Flex>
-
-      <div>
-        <img className={styles.b_bottom} src={data.center} alt="" />
+     <div className={styles.image_prod}>
+      <p>{data.prod_id.title} - <Link to={'/user/'+data.owner._id}>{data.owner.username}</Link></p>
+      <div className={styles.main_image}>
+        <img src={data.prod_id.images[0]}alt={data.prod_id.images[0]} />
       </div>
+      <div className={styles.flex_img}>
+        {data.prod_id.images.map(x=>{
+          return(
+            <div className={styles.img_sec}>
+              <img src={x} alt="XXX" />
+            </div>
+          )
+        })}
+      </div>
+     </div>
     </div>
   );
 };

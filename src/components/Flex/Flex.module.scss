@@ -1,6 +1,11 @@
+@import '../../assets/scss/media-queries.scss';
+
 .main {
   display: flex;
   align-items: center;
   // justify-content: center;
   flex-wrap: wrap;
+  @include lt-md{
+    flex-wrap: inherit;
+  }
 }

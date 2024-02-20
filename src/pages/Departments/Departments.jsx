@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Departments.module.scss";
 import AuctionsTypes from "../../common/AuctionsTypes/AuctionsTypes";
 import MainContainer from "../../components/Containers/MainContainer";
@@ -11,13 +11,21 @@ import {
 } from "./data";
 import Flex from "../../components/Flex/Flex";
 import Button from "../../components/Buttons/Button";
-import { P12, P14, P16, P21 } from "../../components/TXT/TXT";
+import { P12, P12ERROR, P14, P16, P21 } from "../../components/TXT/TXT";
 import { close, loop, white_close } from "../../assets/svgs";
-import { Slider } from "@mui/material";
+import { Drawer, Slider } from "@mui/material";
+import { useForm } from "react-hook-form";
+import { showErrorToast } from "../toast/toast";
+import { chnagePassword } from "../../api/user";
+import { useMutation } from "@tanstack/react-query";
+import { searchBid } from "../../api/bid";
+import { selectSearch, setSearchBid } from "../../store/bidSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 function Departments() {
   const [open_filter, set_open_filter] = useState(true);
-
+  let {id} = useParams()
   const closeFilter = () => {
     set_open_filter(false);
   };
@@ -46,15 +54,30 @@ function Departments() {
 }
 
 const Part1 = ({ open_filter = false, closeFilter = () => {} }) => {
-  const searched_items = ["Bike", "Bike", "Bike"];
 
-  const [value, setValue] = React.useState([100, 5000]);
+  const { register, handleSubmit, watch , formState: { errors } } = useForm({
+    defaultValues: {
+      search: '',
+
+    },
+  });
+  
+
+  const [value, setValue] = React.useState([5, 5000]);
 
   const handleChange = (_, newValue) => {
     setValue(newValue);
   };
 
+  let {id} = useParams();
+  
+  useEffect(()=>{
+    if(id.length >0 && value.length>0 )
+     updateUsers.mutate({search:id,price:value,type:selected_types_auctions});
+  },[id,value])
+
   const [selected_types_auctions, set_selected_types_auctions] = useState(null);
+  const [arrayOfValues, setArrayOfValues] = useState([]);
 
   const SelectType = (index) => {
     if (selected_types_auctions === index) {
@@ -64,6 +87,31 @@ const Part1 = ({ open_filter = false, closeFilter = () => {} }) => {
     }
   };
 
+  const dispatch = useDispatch()
+
+   const updateUsers = useMutation({
+
+    mutationFn: searchBid,
+
+    onError: (error) => {
+      if (error.response.data.error)
+      showErrorToast("Something went worng!")
+
+    },
+    onSuccess: (data) => {
+        dispatch( setSearchBid(data))
+
+    },
+
+  });
+  function submit(data){
+    setArrayOfValues(old => [...old,data.search])
+    updateUsers.mutate({...data,price:value,type:selected_types_auctions});
+  }
+  const handleDelete = (index) => {
+    setArrayOfValues(old => old.filter((data, i) => data !== index));
+  };
+
   return (
     open_filter && (
       <div className={styles.part1}>
@@ -71,20 +119,21 @@ const Part1 = ({ open_filter = false, closeFilter = () => {} }) => {
           <P21 weight={700}>Filters</P21>
           <img src={close} alt="" onClick={closeFilter} />
         </Flex>
-
+        <form onSubmit={handleSubmit(submit)}>
         <Flex className={styles.search}>
           <img src={loop} alt="" />
-          <input type="text" placeholder="Search for product" />
+          <input type="text" placeholder="Search for product" {...register('search', { required: 'This field is required' })} />
         </Flex>
+          {errors.search && <P12ERROR>{errors.search.message}</P12ERROR>}
 
         <hr />
 
         <P16 weight={500}>Product</P16>
         <Flex flex="start" className={styles.searched_items}>
-          {searched_items.map((item, index) => (
+          {arrayOfValues.map((item, index) => (
             <Flex flex="start" key={index} className={styles.searched_item}>
               <P12 weight={500}>{item}</P12>
-              <img src={white_close} alt="" />
+              <img src={white_close} alt="" onClick={e => handleDelete(item)}/>
             </Flex>
           ))}
         </Flex>
@@ -97,13 +146,13 @@ const Part1 = ({ open_filter = false, closeFilter = () => {} }) => {
           className={styles.slider}
           valueLabelDisplay="$"
           value={value}
-          min={100}
+          min={5}
           max={5000}
           onChange={handleChange}
           valueLabelFormat={(x) => `${x}$`}
         />
         <Flex flex="between" className={styles.slide_values}>
-          <P12>$100</P12>
+          <P12>$5</P12>
           <P12>$5000</P12>
         </Flex>
 
@@ -136,28 +185,42 @@ const Part1 = ({ open_filter = false, closeFilter = () => {} }) => {
             Cancel
           </Button>
           <Button className={styles.btn2}>Show Results (20)</Button>
-        </Flex>
+        </Flex>  
+        </form>
+        
       </div>
     )
   );
 };
 
+
 const Part2 = ({ open_filter = false }) => {
   const op_filt_st = open_filter ? styles.opened_filter : "";
+
+  const auctions = useSelector(selectSearch)
+  const [array,setArray] = useState([])
+  useEffect(()=>{
+    setArray(auctions)
+    console.log(auctions);
+  },[auctions])
+  
+  
   return (
     <div className={`${styles.part2} ${op_filt_st}`}>
       <AuctionSection
         className={styles.auctions_section}
         title="COMPANY LIVE AUCTION​"
-        auctions={company_live_auctions}
+        auctions={array.filter(x=> x.prod_id.type == "company")}
         cardclassName={styles.card}
+        type="company"
       />
 
       <AuctionSection
         className={styles.auctions_section}
         title="INDIVIDUAL LIVE AUCTION​"
-        auctions={individual_live_auctions}
+        auctions={array.filter(x=> x.prod_id.type == "individual")}
         cardclassName={styles.card}
+        type="individual"
       />
     </div>
   );

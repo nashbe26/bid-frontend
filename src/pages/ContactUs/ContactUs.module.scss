@@ -1,3 +1,5 @@
+@import '../../assets/scss/media-queries.scss';
+
 .main {
   position: relative;
   padding: 5vw 0px 10vw 0px;
@@ -13,6 +15,9 @@
 
 .form {
   width: 41%;
+  @include lt-md{
+    width: 100%;
+  }
 
   .title {
     color: #001d3d;
@@ -70,6 +75,12 @@
 .contacts {
   width: 100%;
   margin-top: 2vw;
+  @include lt-md{
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 2rem;
+  }
 
   img {
     width: 40px;

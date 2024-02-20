@@ -11,6 +11,7 @@ function EndingSoon() {
       <AuctionsTypes />
       <MainContainer>
         <AuctionSection
+          type="ending"
           title="ENDING SOON ​🔥​🔥​"
           sub_title="Fast join us !"
           auctions={ending_auctions}

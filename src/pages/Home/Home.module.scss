@@ -1,3 +1,5 @@
+@import '../../assets/scss/media-queries.scss';
+
 .main {
 }
 
@@ -11,6 +13,10 @@
     img {
       width: 100%;
       display: block;
+      @include lt-md{
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 
@@ -25,6 +31,15 @@
     justify-content: flex-start !important;
 
     padding: 6% 4%;
+  @include lt-md{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+    padding: 2% 4%;
+  }
   }
 
   button {
@@ -35,6 +50,10 @@
     font-weight: 700;
     padding: 15px 60px;
     font-size: 18px;
+    @include lt-md{
+      padding: 4px 30px;
+      font-size: 10px;
+    }
   }
 }
 // ######################### HEADER #########################
@@ -57,27 +76,45 @@
 
   .left {
     left: -2%;
+    @include lt-md{
+      left: 2%;
+    }
   }
-
+  
   .right {
     right: -2%;
+    @include lt-md{
+      right: 2%;
+    }
   }
 
   .list {
     width: 100%;
     height: 100%;
+    padding: 0.5rem 0;
+
+    @include lt-md{
+      gap: 15px;
+      width: 100%;
+      overflow-x: scroll;
+    }
+    .item {
+      cursor: pointer;
+      height: 100%;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.6% 0.8%;
+      user-select: none;
+      @include lt-md{
+        padding: 3% 1.8%;
+        min-width:fit-content;
+        font-size: 12px;
+      }
+    }
   }
 
-  .item {
-    cursor: pointer;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.6% 0.8%;
-    user-select: none;
-  }
 
   .selected {
     background-color: var(--yellow);
@@ -95,11 +132,15 @@
   width: 100%;
   padding: 3% 0px 0px 0px;
   align-items: flex-start;
-
+  @include lt-md{
+    display: block;
+  }
   .left {
     width: 50%;
     margin: 3% 0px 0px 0px;
-
+    @include lt-md{
+      width: 100%;
+    }
     p {
       color: #003566;
       width: 85%;
@@ -108,7 +149,10 @@
 
   .right {
     width: 50%;
-
+    @include lt-md{
+      width: 100%;
+      margin: 1.5rem 0;
+    }
     img {
       width: 100%;
     }
@@ -119,11 +163,20 @@
 
 .steps_delivery {
   flex-wrap: nowrap;
+  display: flex;
+  @include lt-md{
+    display: block;
+  }
 
   .items {
     flex-wrap: nowrap;
     margin: -3% 0px 5% 0px;
+    display: flex;
+    @include lt-md{
+      display: block;
+    }
   }
+  
 
   .item {
     // width: 25%;
@@ -151,9 +204,19 @@
 
   .w-3 {
     width: 27%;
+    padding: 1rem 0;
+    @include lt-md{
+      width: 100%;
+      justify-content: flex-start!important;
+    }
   }
 
   .w-2 {
     width: 20%;
+    padding: 1rem 0;
+    @include lt-md{
+      width: 100%;
+      justify-content: flex-start!important;
+    }
   }
 }

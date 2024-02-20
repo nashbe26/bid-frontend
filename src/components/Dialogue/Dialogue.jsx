@@ -45,6 +45,7 @@ const Popup = ({
             position: "relative",
             backgroundColor: "transparent",
             borderRadius: "0",
+            margin:"0"
           },
         },
       }}

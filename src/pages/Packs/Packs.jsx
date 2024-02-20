@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Packs.module.scss";
 import MainContainer from "../../components/Containers/MainContainer";
 import TitleAndSubTitle from "../../components/TitleAndSubTitle/TitleAndSubTitle";
@@ -8,6 +8,8 @@ import { packs } from "./data";
 import { reward, verified_1 } from "../../assets/svgs";
 import { H36, P12, P14, P16 } from "../../components/TXT/TXT";
 import Button from "../../components/Buttons/Button";
+import { loadStripe } from "@stripe/stripe-js";
+import customAxios from "../../axios/custom";
 
 function Packs() {
   return (
@@ -35,7 +37,19 @@ function Packs() {
 
 const Pack = ({ pack = packs[0] }) => {
   const special = pack.price.special;
+  const [sessionId, setSessionId] = useState(null);
 
+  const handlePayment = async (data) => {
+    const stripePromise = loadStripe('pk_test_51HEvaHLlNX7wORuBb9M0Xm4yYBaiBn6apMqpdxyUPAaFqFKcynJsWhxqsmwsuffuQzO97YY5928975nhugVoIWi600L0o043it');
+
+    try {
+      const response = await customAxios.post('/api/v1/payment/create-checkout-session?amount='+data);
+      const stripe = await stripePromise;
+      await stripe.redirectToCheckout({ sessionId:response.data.sessionId });
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div className={styles.pack}>
       <Flex flex="start" className={styles.head}>
@@ -68,6 +82,7 @@ const Pack = ({ pack = packs[0] }) => {
         <Button
           className={`${special ? styles.special : ""}`}
           type={special ? "filled" : "outlined"}
+          onClick={e => handlePayment(pack.price.value)}
         >
           €{pack.price.value}
         </Button>

@@ -1,0 +1,53 @@
+.button {
+  border-radius: 3px;
+  border: 1px solid rgba(78, 135, 155, 0.22);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 6px 10px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 14px;
+    margin: 0px 2px;
+    transform: translateX(-3px);
+  }
+}
+.buttonMain {
+  border-radius: 3px;
+  border: 1px solid rgba(78, 135, 155, 0.22);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px 20px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 14px;
+    margin: 0px 2px;
+    transform: translateX(-3px);
+  }
+}
+.outlined {
+  background-color: transparent;
+  color: var(--text-green);
+}
+
+.filled {
+  background-color: var(--main);
+  color: var(--text-white);
+}
+
+.fullWidth {
+  width: 100%;
+}

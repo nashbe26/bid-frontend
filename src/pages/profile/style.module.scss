@@ -1,0 +1,173 @@
+@import '../../assets/scss/media-queries.scss';
+
+.main_profile{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .container{
+        width: 90%;
+        @include lt-md{
+            width: 95%;
+        }
+        .photos{
+            width: 100%;
+            position: relative;
+            .cover{
+                width: 100%;
+                height: 200px;
+                border-radius: 12px;
+                border: 1px solid #585858;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border: 1px solid #585858
+                }
+            }
+            .cover_no{
+                width: 100%;
+                height: 300px;
+                border-radius: 12px;
+                border: 1px solid #585858;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 15px;
+                @include lt-md{
+                    height: 165px;
+                }
+                p{
+                    font-size: 24px;
+                    font-weight: 500;
+                    line-height: 36px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    color: #001D3D;
+                    @include lt-md{
+                            font-size: 18px;
+                        }
+                    }
+
+                    i{
+
+                        color: #001D3D;
+                    }
+            }
+            .flex{
+                display: flex;
+                justify-content: flex-end;
+                @include lt-md{
+                    justify-content:center;
+                }
+                .getReady{
+                    width: 90%;
+                    display: flex;
+                    gap: 50px;
+                    align-items: flex-end;
+                    transform: translateY(-50%);
+                    .logo{
+                        width: 200px;
+        
+                        height: 200px;
+                        border-radius: 12px;
+                        @include lt-md{
+                            width: 25%;
+        
+                            height: 95px;
+                        }
+                        img{
+                            width: 100%;
+                            border-radius: 12px;
+                            height: 100%;
+                            border: 1px solid #585858
+                        }
+                    }
+                    p{
+                        font-size: 24px;
+                        font-weight: 500;
+                        line-height: 36px;
+                        letter-spacing: 0em;
+                        text-align: left;
+                        color: #001D3D;
+                        margin-bottom: 1.5rem;
+                        @include lt-md{
+                            font-size: 18px;
+                        }
+                    }
+                }
+
+            }
+        }
+        .wBop{
+            display: flex;
+            justify-content: center;
+            @include lt-md{
+                flex-direction: column;
+            }
+            .description{
+                display: flex;
+                gap: 15px;
+                padding: 3rem 1rem;
+                border: 1px solid #D2D2D2;
+                margin-bottom: 3rem;
+                width: 80%;
+                @include lt-md{
+                    width: 100%;
+                    flex-direction: column;
+                }
+                .Header{
+                    width: 30%;
+                    @include lt-md{
+                        width: 100%;
+                    }
+                    .text{
+                        width: 100%;
+                        padding: 1rem;
+                        .main{
+                            
+                            font-size: 16px;
+                            font-weight: 700;
+                            line-height: 24px;
+                            letter-spacing: 0em;
+                            color: #003566;
+                        }
+                        .title{
+                            
+                            color: #003566;
+                            font-size: 16px;
+                            font-weight: 300;
+                            line-height: 24px;
+                            letter-spacing: 0em;
+                            
+                        }
+                    }
+                }
+                .bio{
+                    width: 70%;
+                    padding: 1rem;
+                    @include lt-md{
+                        width: 100%;
+                    }
+                    .main{
+                        
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        letter-spacing: 0em;
+                        color: #003566;
+                    }
+                    .title{
+                        
+                        color: #003566;
+                        font-size: 16px;
+                        font-weight: 300;
+                        line-height: 24px;
+                        letter-spacing: 0em;
+                        
+                    }
+                }
+            }
+        }
+    }
+}

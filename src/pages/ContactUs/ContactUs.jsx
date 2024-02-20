@@ -7,8 +7,10 @@ import { H38, P13, P14 } from "../../components/TXT/TXT";
 import Button from "../../components/Buttons/Button";
 
 import { contacts } from "./data";
+import useResponsive from "../../hooks/UseResponsive";
 
 function ContactUs() {
+  const isMobile = useResponsive()
   return (
     <div className={styles.main}>
       <MainContainer>
@@ -41,12 +43,17 @@ function ContactUs() {
               })}
             </Flex>
           </div>
+          {!isMobile.lt.md && 
           <div className={styles.img}>
-            <img src={contact_us_img} alt="" />
-          </div>
+          <img src={contact_us_img} alt="" />
+        </div>
+          }
+          
         </Flex>
       </MainContainer>
+      {!isMobile.lt.md && 
       <div className={styles.blue} />
+    }
     </div>
   );
 }

@@ -1,6 +1,8 @@
+@import '../../assets/scss/media-queries.scss';
+
 .main {
   background: linear-gradient(180deg, #000814 0%, #003566 100%);
-  padding: 6% 0px 3% 0px;
+  padding: 3% 0px 1% 0px;
 
   p {
     color: white;
@@ -9,20 +11,27 @@
 
 .content {
   align-items: flex-start;
+  @include lt-md{
+    display: block;
+  }
 }
 
 .part1 {
-  width: 50%;
+  width: 40%;
   height: 100%;
-
+  @include lt-md{
+    width: 100%;
+  }
   .logo {
-    width: 60%;
+    width: 25%;
     display: block;
   }
 
   .rxs {
-    margin: 0px 0px 0px 15%;
-
+    margin: 2rem 0px 0px 0%;
+    @include lt-md{
+      margin: 10% 0px 10% 0px;
+    }
     img {
       height: 22px;
       margin: 0px 5px 0px 0px;
@@ -34,7 +43,9 @@
 
 .part2 {
   align-items: start;
-
+  @include lt-md{
+    display: block;
+  }
   .group {
     margin: 0px 4vw 0px 0px;
   }
@@ -45,11 +56,20 @@
 
   .link {
     margin: 0px 0px 10% 0px;
+    @include lt-md{
+      margin: 0px 0px 5% 0px;
+      font-size: 14px!important;
+    }
   }
 }
 
 .bottom {
-  margin-top: 3vw;
+  margin-top: 1vw;
+  padding: 1rem 0;
+  @include lt-md{
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 .payements {

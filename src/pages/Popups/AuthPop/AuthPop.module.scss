@@ -1,7 +1,11 @@
+@import '../../../assets/scss/media-queries.scss';
+
 .main {
   background-color: white;
-
   width: 32vw;
+  @include lt-md{
+    width: 95vw;
+  }
 }
 
 .container {
@@ -80,6 +84,9 @@
       border: 1px solid #e4e5e7;
       outline: none;
       padding: 12px 15px;
+      @include lt-md{
+        font-size: 14px;
+      }
     }
 
     input::placeholder {
@@ -127,7 +134,9 @@
   width: 100%;
   border-top: solid 1px #a0a0a0;
   padding: 1.5vw 0px;
-
+  @include lt-md{
+    padding: 1rem 0;
+  }
   .txt_footer {
     color: #a0a0a0;
     text-align: center;

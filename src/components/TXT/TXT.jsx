@@ -306,3 +306,37 @@ export const P9 = ({
     </p>
   );
 };
+
+export const P12ERROR = ({
+  children,
+  className,
+  onClick = () => {},
+  weight = 400,
+}) => {
+  return (
+    <p
+      className={`${styles.p12} ${className}`}
+      style={{ fontWeight: weight,color: "#cc0000"}}
+      onClick={onClick}
+    >
+      {children}
+    </p>
+  );
+};
+
+export const P14ERROR = ({
+  children,
+  className,
+  onClick = () => {},
+  weight = 400,
+}) => {
+  return (
+    <p
+      className={`${styles.p12} ${className}`}
+      style={{ fontWeight: weight,color: "#cc0000"}}
+      onClick={onClick}
+    >
+      {children}
+    </p>
+  );
+};

@@ -6,12 +6,15 @@ import { left_normal_arrow, right_normal_arrow } from "../../assets/svgs";
 import Flex from "../../components/Flex/Flex";
 import { auctions_types } from "./data";
 import { P13, P16 } from "../../components/TXT/TXT";
+import { useNavigate } from "react-router-dom";
 
 const AuctionsTypes = ({ className = "" }) => {
   const { current, Next, Prev, hasNext, hasPrev } = useLoadCaros(
     auctions_types,
     9
   );
+
+  const navigate = useNavigate()
 
   return (
     <div className={`${styles.main_lis_auctions} ${className}`}>
@@ -29,7 +32,7 @@ const AuctionsTypes = ({ className = "" }) => {
           <Flex flex="between" className={styles.list}>
             {current.map((item, index) => {
               return (
-                <Flex flex="start" className={styles.item} key={index}>
+                <Flex flex="start" className={styles.item} key={index} onClick={e => navigate('/departments/'+item.title)}>
                   <img src={item.icon} alt="" />
                   <P13 weight={400}>{item.title}</P13>
                 </Flex>

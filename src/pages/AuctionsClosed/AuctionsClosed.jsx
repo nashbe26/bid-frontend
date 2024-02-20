@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./AuctionsClosed.module.scss";
 import MainContainer from "../../components/Containers/MainContainer";
 import Flex from "../../components/Flex/Flex";
@@ -10,27 +10,41 @@ import { sold_out } from "../../assets/images";
 import BlogSection from "../AuctionLive/BlogSection/BlogSection";
 import useGetTime from "../../hooks/UseGetTime";
 import Button from "../../components/Buttons/Button";
+import { UseBidById } from "../../utils/functions/bid/bid-fn";
+import { useNavigate, useParams } from "react-router-dom";
+import moment from "moment";
 
 function AuctionsClosed() {
+
+  let {id} = useParams()
+
+  const {data,isLoading,isError,refetch} = UseBidById(id)
+
+  useEffect(()=>{
+    console.log("here");
+    refetch()
+  },[id])
   return (
     <MainContainer className={styles.main}>
-      <StatsPart />
-      <BlogSection data={blog} />
+      {data && !isLoading && 
+      <StatsPart bid={data}/>
+      }
     </MainContainer>
   );
 }
 
-const StatsPart = () => {
+const StatsPart = ({bid}) => {
   return (
     <Flex flex="between" className={styles.top_side}>
-      <Table />
-      <ClosedAuction auction={auction} />
-      <DetailsAuctionClosed />
+      {bid && <Table bid={bid} /> }
+      {bid && <ClosedAuction auction={bid} />}
+      {bid && <DetailsAuctionClosed auction={bid} />}
+      
     </Flex>
   );
 };
 
-const Table = () => {
+const Table = ({bid}) => {
   const data = [...table];
 
   return (
@@ -41,35 +55,32 @@ const Table = () => {
           <div className={styles.txts}>
             <Flex flex="start">
               <P14 className={styles.txt1} weight={600}>
-                andreto30
+                {bid.winner?.username ? bid.winner.username : 'No Winner Yet'}
               </P14>
-              <P14 weight={300}> 85 Bets used</P14>
+              <P14 weight={300}> {bid.message_bid.length} Bets used</P14>
             </Flex>
-            <P14 weight={300}>Won: Today at 10:48 Oggi alle 10:48</P14>
           </div>
         </Flex>
         <P21 weight={500} className={styles.price}>
-          €3.05
+          €{bid.last_amount}
         </P21>
       </Flex>
 
       <table className={styles.table}>
         <thead>
           <tr className={styles.th}>
-            <th>PRICE</th>
-            <th>MODE</th>
-            <th>HOURS</th>
-            <th>USER</th>
+          <th>PRICE</th>
+          <th>HOURS</th>           
+          <th>USER</th>
           </tr>
         </thead>
         <tbody>
-          {data.map((item, index) => {
+          {bid.message_bid.map((item, index) => {
             return (
               <tr key={index}>
-                <td>{item.PRICE}</td>
-                <td>{item.MODE}</td>
-                <td>{item.HOURS}</td>
-                <td>{item.USER}</td>
+                <td>€{item.bid_amount}</td>
+                <td>{moment(item.createdAt).format('YYYY/MM/DD HH:MM:SS')}</td>
+                <td>{item.sender.username}</td>
               </tr>
             );
           })}
@@ -81,25 +92,30 @@ const Table = () => {
 
 const ClosedAuction = ({ auction }) => {
   let heart = auction.hearted ? heart_fill : heart_empty;
-
+useEffect(()=>{
+  console.log(auction);
+},[auction])
   return (
     <div className={styles.closed_auction}>
-      <Flex flex="between" className={styles.top}>
-        <P21 weight={700}>Closed</P21>
+     <Flex flex="between" className={styles.top}>
+        <P21 weight={700}>{auction.status.toUpperCase()}</P21>
         <img src={heart} alt="" />
       </Flex>
+      
 
       <div className={styles.body}>
         <Flex className={styles.img_container}>
-          <img src={auction.img} alt="" />
+          <img src={auction.prod_id.images[0]} alt="" />
         </Flex>
+        {auction.status == "closed" && 
         <Flex className={styles.overlay}>
           <img src={sold_out} alt="" />
         </Flex>
+        }
       </div>
 
       <Flex flex="between" className={styles.footer}>
-        {auction.images.map((img, index) => {
+        {auction.prod_id.images.map((img, index) => {
           return <img src={img} alt="" key={index} />;
         })}
       </Flex>
@@ -107,57 +123,92 @@ const ClosedAuction = ({ auction }) => {
   );
 };
 
-const DetailsAuctionClosed = () => {
+const DetailsAuctionClosed = ({auction}) => {
+
+  const givenDate = moment(new Date(`${auction.date}T${auction.time}`), 'YYYY/MM/DD HH:mm');
+
+  const [timeDiff, setTimeDiff] = useState(null);
+  const [countdown, setCountdown] = useState(null);
+
+  useEffect(() => {
+    const updateCountdown = () => {
+
+      const currentTimeDiff = givenDate.diff(moment(), 'seconds') - 1;
+
+
+      setTimeDiff(currentTimeDiff);
+      setCountdown(currentTimeDiff);
+    };
+
+    const intervalId = setInterval(updateCountdown, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const navigate = useNavigate()
+
   return (
     <div className={styles.auction_closes}>
-      <H24>Sony ZX330BT</H24>
+      <H24>{auction.prod_id.title}</H24>
 
       <Flex flex="start" className={styles.price}>
-        <P16 className={styles.value}>35.00</P16>
+        <P16 className={styles.value}>{auction.last_amount}</P16>
         <P14 className={styles.money} weight={600}>
-          USD
+          EUR
         </P14>
       </Flex>
 
       <Flex flex="between" className={styles.start_price}>
-        <P14 className={styles.money}>Starting price : 1.77$</P14>
-        <Flex flex="start" className={styles.stock}>
-          <P16 className={styles.value}>13</P16>
-          <P14 className={styles.in_stock}>In Stock</P14>
-        </Flex>
+        <P14 className={styles.money}>current price : {auction.last_amount}$</P14>
+     
       </Flex>
 
       <P12 className={styles.desc}>
-        Le lorem ipsum est, en imprimerie, une suite de mots sans signification
-        utilisée à titre provisoire pour calibrer une mise en page, le
+      <div dangerouslySetInnerHTML={{__html:auction.prod_id.description}} />
+        
       </P12>
-
+      {
+        auction.status == "ending soon" && 
       <div className={styles.auction_closed_in}>
-        <P14>Auction Closed</P14>
-        <Timer minutes={7923} />
+        <P14>Auction {auction.status}</P14>
+        <Timer seconds={timeDiff} />
       </div>
-
-      <div className={styles.buttons}>
-        <Button fullWidth className={styles.btn1}>
+}
+{
+        auction.status == "coming soon"  && 
+      <div className={styles.auction_closed_in}>
+        <P14>Auction {auction.status}</P14>
+        <Timer seconds={timeDiff} />
+      </div>
+}
+      {
+        auction.status == "live" && 
+        <div className={styles.buttons}>
+        <Button onClick={e => navigate('/')} fullWidth className={styles.btn1}>
           Home Page
         </Button>
-        <Button fullWidth type="outlined" className={styles.btn2}>
+        <Button  onClick={e => navigate('/live-auctions/'+auction._id)} fullWidth type="outlined" className={styles.btn2}>
           Place a bid
         </Button>
       </div>
+      }
+      
     </div>
   );
 };
 
-const Timer = ({ minutes = 0 }) => {
-  const { time } = useGetTime(minutes);
-
+const Timer = ({ seconds = 0 }) => {
+  const { time } = useGetTime(seconds);
+  useEffect(()=>{
+    console.log(time);
+  },[time])
   return (
     <div className={styles.timer}>
       <Flex flex="between" className={styles.block}>
         <TimeBox title="DAYS" number={time.days} />
         <TimeBox title="HOURS" number={time.hours} />
         <TimeBox title="MINUTES" number={time.minutes} />
+        <TimeBox title="SECONDS" number={time.seconds} />
       </Flex>
     </div>
   );

@@ -49,27 +49,39 @@ export const auctions_types = [
     title: "Mobility",
   },
   {
-    icon: auc_type9,
+    icon: auc_type1,
+    title: "Kitchen",
+  },
+  {
+    icon: auc_type1,
     title: "Mobility",
   },
   {
-    icon: auc_type9,
-    title: "Mobility",
+    icon: auc_type1,
+    title: "Hobby",
   },
   {
-    icon: auc_type9,
-    title: "Mobility",
+    icon: auc_type1,
+    title: "TV and Audio",
   },
   {
-    icon: auc_type9,
-    title: "Mobility",
+    icon: auc_type1,
+    title: "Fashion",
   },
   {
-    icon: auc_type9,
-    title: "Mobility",
+    icon: auc_type1,
+    title: "Jewellery",
   },
   {
-    icon: auc_type9,
-    title: "Mobility",
+    icon: auc_type1,
+    title: "Watches",
+  },
+  {
+    icon: auc_type1,
+    title: "Cars",
+  },
+  {
+    icon: auc_type1,
+    title: "Motorcycles",
   },
 ];

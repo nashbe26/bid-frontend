@@ -12,11 +12,12 @@ function Button({
   left = false,
   right = false,
 }) {
+  
   // ############### conditional styles
   let is_filled = type === "filled" ? styles.filled : "";
   let is_outlined = type === "outlined" ? styles.outlined : "";
   let is_fullWidth = fullWidth ? styles.fullWidth : "";
-  // let is_text = type==="text" ? styles.text : "";
+  // ############### let is_text = type==="text" ? styles.text : "";
 
   return (
     <button

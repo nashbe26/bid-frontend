@@ -1,7 +1,12 @@
+@import '../../assets/scss/media-queries.scss';
+
 .MainContainer {
   width: 92%;
   margin-left: auto;
   margin-right: auto;
+  @include lt-md{
+    width: 97%;
+  }
 }
 
 .MainContainer2 {

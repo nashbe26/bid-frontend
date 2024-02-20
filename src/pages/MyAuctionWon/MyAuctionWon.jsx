@@ -8,32 +8,56 @@ import { live_auctions } from "./data";
 
 import { cup, empty_box } from "../../assets/svgs";
 import Flex from "../../components/Flex/Flex";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../store/userSlice";
+import { useNavigate } from "react-router-dom";
 
 function MyAuctionWon() {
+  const user= useSelector(selectUser)
+  const currentUrl = new URL(window.location.href)
   return (
     <MainContainer className={styles.main}>
-      {live_auctions.length === 0 ? (
-        <YouHaveNoAuction />
-      ) : (
-        <AuctionSection title="Favourite" auctions={live_auctions} />
-      )}
+      {currentUrl.pathname == "/my-auctions-won" &&
+       <>
+    
+       {user && user.bids_won && user.bids_won.length == 0 ? (
+         <YouHaveNoAuction text={"You haven't won any auctions yet."}  title={"My Auctions Won"}/>
+       ) : (
+       
+         <AuctionSection title="My Auctions Won" type={"won"} auctions={user.bids_won} />
+       )}
+     </>
+      }
+      {currentUrl.pathname == "/my-auctions-fav" &&
+     <>
+    
+       {user && user.fav_bid && user.fav_bid.length == 0 ? (
+         <YouHaveNoAuction />
+       ) : (
+       
+         <AuctionSection title="My Favourite" type={"favorite"} auctions={user.fav_bid} />
+       )}
+     </>
+  }
+     
     </MainContainer>
   );
 }
 
-const YouHaveNoAuction = () => {
+const YouHaveNoAuction = ({title,text}) => {
+  const navigate = useNavigate()
   return (
     <Flex flex="between" className={styles.no_auction}>
       {/* <img src={empty_box} alt="empty_box" /> */}
       <Flex flex="center" className={styles.txts}>
         <Flex className={styles.main_title}>
-          <H24 weight={700}>My Auctions Won</H24>
+          <H24 weight={700}>{title}</H24>
           <img src={cup} alt="" />
         </Flex>
-        <P18>You haven't won any auctions yet.</P18>
+        <P18>{text}</P18>
       </Flex>
 
-      <Button>GO WIN WITH THEM NOW</Button>
+      <Button onClick={e => navigate('/')}>GO WIN WITH THEM NOW</Button>
     </Flex>
   );
 };
